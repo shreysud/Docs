@@ -1,0 +1,514 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Useful Packages and Programs &mdash; PhD Notes 0.0.1-rc1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="PhD Notes 0.0.1-rc1 documentation" href="../../index.html"/>
+        <link rel="up" title="julia" href="index.html"/>
+        <link rel="next" title="Making Your Own Packages" href="making_packages.html"/>
+        <link rel="prev" title="Getting Started with julia" href="getting_started.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PhD Notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../software.html">Software and Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ros/index.html">Simulation to Experimentation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">julia</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="getting_started.html">Getting Started with julia</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Useful Packages and Programs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adding-and-removing-packages-in-julia">Adding and Removing Packages in julia</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#all-packages-that-i-have-on-julia">All packages that I have on julia</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#basics">Basics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#math">Math</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optimization">Optimization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#plotting">Plotting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#my-packages">My Packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#miscellaneous">Miscellaneous</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#useful-command-after-installing-packages">Useful Command After Installing Packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#customizing-keybindings-and-tab-completion">Customizing Keybindings and Tab Completion</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-pkg-usage-notes">Basic Pkg. Usage Notes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Optimization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#derivatives">Derivatives</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mathprogbase-jl">MathProgBase.jl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#polynomial-division">Polynomial Division</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#plots-jl">Plots.jl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#differentialequations-jl">DifferentialEquations.jl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameters-jl">Parameters.jl</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="making_packages.html">Making Your Own Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="macros.html">Macros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="juliabox.html">JuliaBox and Jupyter Notebooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="julia_notes.html">julia notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="issues.html">Problems and Solutions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linux/index.html">linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../latex/index.html">LaTex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../video/index.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/index.html">misc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/lidar.html">LiDAR</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PhD Notes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../software.html">Software and Resources</a> &raquo;</li>
+        
+          <li><a href="index.html">julia</a> &raquo;</li>
+        
+      <li>Useful Packages and Programs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/software/julia/useful_packages.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="useful-packages-and-programs">
+<h1>Useful Packages and Programs<a class="headerlink" href="#useful-packages-and-programs" title="Permalink to this headline">¶</a></h1>
+<p>This page includes details of the packages and programs that I am using in OCP.</p>
+<div class="section" id="adding-and-removing-packages-in-julia">
+<h2>Adding and Removing Packages in julia<a class="headerlink" href="#adding-and-removing-packages-in-julia" title="Permalink to this headline">¶</a></h2>
+<p>A useful description of the syntax for adding and remove packages in julia can be found <a class="reference external" href="http://docs.julialang.org/en/release-0.4/manual/packages/">here</a>.</p>
+</div>
+<div class="section" id="all-packages-that-i-have-on-julia">
+<h2>All packages that I have on julia<a class="headerlink" href="#all-packages-that-i-have-on-julia" title="Permalink to this headline">¶</a></h2>
+<p>I have many packages and to configure them all can be tricky, so I include a list of commands that you can copy and past into julia to get started.
+Make sure that you are restarting the both julia and the terminal after things are installed.</p>
+</div>
+<div class="section" id="basics">
+<h2>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;DataFrames&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;IJulia&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Parameters&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;PkgDev&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;AmplNLWriter&quot;</span><span class="p">)</span>
+<span class="c1">#Pkg.clone(&quot;https://github.com/JunoLab/Juno.jl&quot;)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;HDF5&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s2">&quot;HDF5&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;SymPy&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Jacobi&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="math">
+<h2>Math<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h2>
+<p>I use:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;DiffBase&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="s2">&quot;https://github.com/Keno/Polynomials.jl&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;DifferentialEquations&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Dierckx&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;ImplicitEquations&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Interpolations&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="optimization">
+<h2>Optimization<a class="headerlink" href="#optimization" title="Permalink to this headline">¶</a></h2>
+<p>I use:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;JuMP&quot;</span><span class="p">)</span> <span class="c1"># adds MathProgBase automatically</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Ipopt&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;CoinOptServices&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;NLopt&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s2">&quot;NLopt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="plotting">
+<h2>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h2>
+<p>Basically I use Plots.jl to interface with some of these:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Conda&quot;</span><span class="p">)</span>
+<span class="n">ENV</span><span class="p">[</span><span class="s2">&quot;PYTHON&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;PyPlot&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Plots&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s2">&quot;PyPlot&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;ImageMagick&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;GR&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Plotly&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;StatPlots&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;PlotRecipes&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;UnicodePlots&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Gadfly&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;RDatasets&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Winston&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;PGFPlots&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s2">&quot;PGFPlots&quot;</span><span class="p">)</span>
+<span class="n">Blink</span><span class="o">.</span><span class="n">AtomShell</span><span class="o">.</span><span class="n">install</span><span class="p">()</span>
+<span class="kn">import</span> <span class="nn">Conda</span> <span class="c1"># to fix pyplot!!!</span>
+<span class="n">Conda</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;qt=4.8.5&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="my-packages">
+<h2>My Packages<a class="headerlink" href="#my-packages" title="Permalink to this headline">¶</a></h2>
+<p>I started these:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Pkg</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="s2">&quot;https://github.com/huckl3b3rry87/VehicleModels.jl&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="s2">&quot;https://github.com/huckl3b3rry87/NLOptControl.jl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="miscellaneous">
+<h2>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h2>
+<p>probably do not need:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Pkg</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="s2">&quot;https://github.com/pwl/MovcolN.jl&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Devectorize&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;FactCheck&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="useful-command-after-installing-packages">
+<h2>Useful Command After Installing Packages<a class="headerlink" href="#useful-command-after-installing-packages" title="Permalink to this headline">¶</a></h2>
+<p>Type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Pkg</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="customizing-keybindings-and-tab-completion">
+<h2>Customizing Keybindings and Tab Completion<a class="headerlink" href="#customizing-keybindings-and-tab-completion" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://docs.julialang.org/en/release-0.5/manual/interacting-with-julia/">Info here</a></p>
+<p>type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">Base</span><span class="p">:</span> <span class="n">LineEdit</span><span class="p">,</span> <span class="n">REPL</span>
+
+<span class="n">const</span> <span class="n">mykeys</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">{</span><span class="n">Any</span><span class="p">,</span><span class="n">Any</span><span class="p">}(</span>
+  <span class="c1"># Up Arrow</span>
+  <span class="s2">&quot;\e[A&quot;</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">o</span><span class="o">...</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">LineEdit</span><span class="o">.</span><span class="n">edit_move_up</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">||</span> <span class="n">LineEdit</span><span class="o">.</span><span class="n">history_prev</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">LineEdit</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">hist</span><span class="p">)),</span>
+  <span class="c1"># Down Arrow</span>
+  <span class="s2">&quot;\e[B&quot;</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">o</span><span class="o">...</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">LineEdit</span><span class="o">.</span><span class="n">edit_move_up</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">||</span> <span class="n">LineEdit</span><span class="o">.</span><span class="n">history_next</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">LineEdit</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">hist</span><span class="p">))</span>
+<span class="p">)</span>
+
+<span class="n">function</span> <span class="n">customize_keys</span><span class="p">(</span><span class="n">repl</span><span class="p">)</span>
+  <span class="n">repl</span><span class="o">.</span><span class="n">interface</span> <span class="o">=</span> <span class="n">REPL</span><span class="o">.</span><span class="n">setup_interface</span><span class="p">(</span><span class="n">repl</span><span class="p">;</span> <span class="n">extra_repl_keymap</span> <span class="o">=</span> <span class="n">mykeys</span><span class="p">)</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+<p>atreplinit(customize_keys)</p>
+</div>
+</div>
+<div class="section" id="basic-pkg-usage-notes">
+<h1>Basic Pkg. Usage Notes<a class="headerlink" href="#basic-pkg-usage-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Optimization<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Currently the only optimization tool that is being tested it IPOPT.</p>
+<ol class="arabic simple">
+<li>IPOPT</li>
+</ol>
+<p>It is very easy to get going using IPOPT in julia using <a class="reference external" href="https://github.com/JuliaOpt/Ipopt.jl">IPOPT.jl</a>.</p>
+</div>
+<div class="section" id="derivatives">
+<h2>Derivatives<a class="headerlink" href="#derivatives" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/JuliaOpt/JuMP.jl">JuMP.jl</a> is one of the most useful packages for solving the OCP because it takes <strong>very</strong> fast automatic derivatives and it allows the user to easily set up optimization problems. So, with this tool there is no need to write out the complicated Jacobian and Hessian functions.</p>
+<p>The documentation for this package can be found <a class="reference external" href="https://jump.readthedocs.io/en/latest/">JuMP docs</a>.</p>
+<p>Some useful Methods are found <a class="reference external" href="http://jump.readthedocs.io/en/latest/refmodel.html?highlight=JuMP.build">by clicking</a>.</p>
+<p><strong>Some useful commands</strong>
+Query upper and lower bounds of all constraints in the model:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">JuMP</span><span class="o">.</span><span class="n">constraintbound</span><span class="p">(</span><span class="n">m</span><span class="p">::</span><span class="n">Model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mathprogbase-jl">
+<h2>MathProgBase.jl<a class="headerlink" href="#mathprogbase-jl" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://mathprogbasejl.readthedocs.io/en/latest/nlp.html">MathProgBase.jl</a>.</p>
+</div>
+<div class="section" id="polynomial-division">
+<span id="ploy-div"></span><h2>Polynomial Division<a class="headerlink" href="#polynomial-division" title="Permalink to this headline">¶</a></h2>
+<p>There was an issue when JuMP was sent a term with polynomial division. This section deals with the attempt to use the <a class="reference external" href="https://github.com/Keno/Polynomials.jl">Polynomials.jl</a> to take care of the polynomial division on the front end, before the expressions are sent to JuMP.</p>
+<p>Basic Functionality:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">using</span> <span class="n">Ploynomials</span>
+<span class="n">Poly</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">Poly</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Division Functionality:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">P1</span> <span class="o">=</span> <span class="n">Poly</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="n">P2</span> <span class="o">=</span> <span class="n">Poly</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">P3</span> <span class="o">=</span> <span class="n">div</span><span class="p">(</span><span class="n">P1</span><span class="p">,</span><span class="n">P2</span><span class="p">)</span>
+<span class="n">Poly</span><span class="p">(</span><span class="mf">0.22222222222222218</span> <span class="o">+</span> <span class="mf">1.6666666666666667</span><span class="n">x</span> <span class="o">+</span> <span class="mf">2.3333333333333335</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="plots-jl">
+<h2>Plots.jl<a class="headerlink" href="#plots-jl" title="Permalink to this headline">¶</a></h2>
+<p>A very powerful plotting tool is <a class="reference external" href="https://juliaplots.github.io/">Plots.jl</a>. It took some time to get everything working because I was not using the same versions of the packages as the developers, but in the end it was work the time. It you run the code that I have listed below you should not have to deal with the setup issues that I had.</p>
+<p>With PGFPlots:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">pdf2svg</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="http://nbviewer.jupyter.org/github/sisl/PGFPlots.jl/blob/master/doc/PGFPlots.ipynb">http://nbviewer.jupyter.org/github/sisl/PGFPlots.jl/blob/master/doc/PGFPlots.ipynb</a></p>
+<p><strong>Problem 1</strong></p>
+<p>I wasted a bunch if my time, could not recreate in a simpler example, but basically, when <code class="docutils literal"><span class="pre">plot()</span></code> should have worked it failed and when I changed the order of the terms in <code class="docutils literal"><span class="pre">plot()</span></code> it works.</p>
+<p><strong>Solution 1</strong></p>
+<p>EX:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>for i in 1:k
+#             plot!(dfs[i][:t],dfs[i][:SA]*180/pi,w=w2,label=label_string[i])
+              plot!(dfs[i][:t],dfs[i][:SA]*180/pi,label=label_string[i],w=w2)
+end
+</pre></div>
+</div>
+<p><strong>Problem 2</strong></p>
+<p>Segfault when attempting to plot after Conda update to Segfault with qt &gt;=4.8.6 on ubuntu</p>
+<p>I was running into an issue with Plots.jl after doing a <code class="docutils literal"><span class="pre">Pkg.update()</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>   _       _ _(_)_     |  A fresh approach to technical computing
+  (_)     | (_) (_)    |  Documentation: http://docs.julialang.org
+   _ _   _| |_  __ _   |  Type &quot;?help&quot; for help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 0.6.0-dev.508 (2016-09-06 20:36 UTC)
+ _/ |\__&#39;_|_|_|\__&#39;_|  |  Commit b1f1525 (26 days old master)
+|__/                   |  x86_64-linux-gnu
+
+julia&gt; using Plots
+julia&gt; plot(rand(4,100))
+signal (11): Segmentation fault
+while loading no file, in expression starting on line 0
+unknown function (ip: 0x32735)
+Allocations: 14606607 (Pool: 14605017; Big: 1590); GC: 25
+Segmentation fault (core dumped)
+</pre></div>
+</div>
+<p><strong>Solution 2</strong></p>
+<p>Change back to old Conda:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">Conda</span>
+<span class="n">Conda</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;qt=4.8.5&quot;</span><span class="p">)</span>
+<span class="n">using</span> <span class="n">PyPlot</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Check out this <a class="reference external" href="https://github.com/JuliaPy/PyPlot.jl/issues/234">link</a>.</p>
+</div>
+<div class="section" id="differentialequations-jl">
+<h2>DifferentialEquations.jl<a class="headerlink" href="#differentialequations-jl" title="Permalink to this headline">¶</a></h2>
+<p><strong>Useful Commands</strong></p>
+<p>all of the timepoints:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sol</span><span class="p">[:]</span>
+</pre></div>
+</div>
+<p>Many times you might want to use a good interpolation. For example, the plots use something like:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">sol</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">linspace</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span><span class="n">tend</span><span class="p">,</span><span class="mi">100</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>To get 100 points from time t0 to tend for the first component:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">sol</span><span class="p">(</span><span class="n">t</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">linspace</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span><span class="n">tend</span><span class="p">,</span><span class="mi">100</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>The array of timepoints for component j:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">sol</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="mi">1</span><span class="p">:</span><span class="n">length</span><span class="p">(</span><span class="n">sol</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="parameters-jl">
+<h2>Parameters.jl<a class="headerlink" href="#parameters-jl" title="Permalink to this headline">¶</a></h2>
+<p>Great package for working with parameters. More info can be found at <a class="reference external" href="http://parametersjl.readthedocs.io/en/latest/manual/">this link</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="making_packages.html" class="btn btn-neutral float-right" title="Making Your Own Packages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="getting_started.html" class="btn btn-neutral" title="Getting Started with julia" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Huckleberry Febbo.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.1-rc1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

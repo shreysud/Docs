@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Project Chrono &mdash; PhD Notes 0.0.1-rc1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="PhD Notes 0.0.1-rc1 documentation" href="../../index.html"/>
+        <link rel="up" title="Simulation to Experimentation" href="index.html"/>
+        <link rel="next" title="Polysync" href="polysync.html"/>
+        <link rel="prev" title="ROS and Gazebo" href="ros_gazebo.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PhD Notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../software.html">Software and Resources</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Simulation to Experimentation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="gazebo.html">Gazebo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gazebo.html#blender">Blender</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ros.html">ROS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ros_gazebo.html">ROS and Gazebo</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Project Chrono</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#background">Background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#potential-fixes">Potential Fixes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#issues">Issues:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resources">Resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#old">OLD</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="polysync.html">Polysync</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rviz.html">RViz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tf.html">tf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="moveit.html">MoveIT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="useful_packages.html">Useful ROS Packages</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../julia/index.html">julia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linux/index.html">linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../latex/index.html">LaTex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../video/index.html">Video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/index.html">misc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/lidar.html">LiDAR</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PhD Notes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../software.html">Software and Resources</a> &raquo;</li>
+        
+          <li><a href="index.html">Simulation to Experimentation</a> &raquo;</li>
+        
+      <li>Project Chrono</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/software/ros/chrono.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="project-chrono">
+<h1>Project Chrono<a class="headerlink" href="#project-chrono" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="background">
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<p>Physics simulator organized as a set of modules that has a high-fidelity HMMWV model validated using Adams.</p>
+</div>
+<div class="section" id="id1">
+<h2><a class="reference external" href="http://api.projectchrono.org/tutorial_install_chrono.html">Install</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-the-irrlicht-engine">
+<h3>Get the <a class="reference external" href="http://irrlicht.sourceforge.net/downloads">IRRlicht engine</a><a class="headerlink" href="#get-the-irrlicht-engine" title="Permalink to this headline">¶</a></h3>
+<p>Make sure that you have the required files:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">cmake</span><span class="o">-</span><span class="n">extras</span> <span class="n">cmake</span><span class="o">-</span><span class="n">qt</span><span class="o">-</span><span class="n">gui</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span> <span class="n">xorg</span><span class="o">-</span><span class="n">dev</span> <span class="n">freeglut3</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
+</div>
+<p>Compile the <code class="docutils literal"><span class="pre">Irrlicht</span> <span class="pre">Engine</span> <span class="pre">1.8.4</span></code> as a shared lib:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">sharedlib</span>
+<span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>Then finally (the following may not all be needed..):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="o">-</span><span class="n">r</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/../</span><span class="n">include</span><span class="o">/</span><span class="n">irrlicht</span>
+<span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/../</span><span class="n">include</span><span class="o">/</span><span class="n">irrlicht</span>
+<span class="n">sudo</span> <span class="n">cp</span> <span class="o">../../</span><span class="n">include</span><span class="o">/*.</span><span class="n">h</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/../</span><span class="n">include</span><span class="o">/</span><span class="n">irrlicht</span><span class="o">/</span>
+<span class="n">sudo</span> <span class="n">cp</span> <span class="o">../../</span><span class="n">lib</span><span class="o">/</span><span class="n">Linux</span><span class="o">/</span><span class="n">libIrrlicht</span><span class="o">.</span><span class="n">so</span><span class="o">.</span><span class="mf">1.8</span><span class="o">.</span><span class="mi">4</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span>
+<span class="n">sudo</span> <span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span> <span class="o">&amp;&amp;</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">f</span> <span class="n">libIrrlicht</span><span class="o">.</span><span class="n">so</span><span class="o">.</span><span class="mf">1.8</span><span class="o">.</span><span class="mi">4</span> <span class="n">libIrrlicht</span><span class="o">.</span><span class="n">so</span><span class="o">.</span><span class="mf">1.8</span>
+<span class="n">sudo</span> <span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span> <span class="o">&amp;&amp;</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">f</span> <span class="n">libIrrlicht</span><span class="o">.</span><span class="n">so</span><span class="o">.</span><span class="mf">1.8</span> <span class="n">libIrrlicht</span><span class="o">.</span><span class="n">so</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="chrono">
+<h3>Chrono<a class="headerlink" href="#chrono" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://www.irrlicht3d.org/wiki/?n=Main.InstallingIrrlicht">Install instructions</a></p>
+<p>Clone the master branch into the <code class="docutils literal"><span class="pre">/opt/chrono/chrono_source</span></code> directory:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">git</span> <span class="n">clone</span> <span class="o">-</span><span class="n">b</span> <span class="n">master</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">projectchrono</span><span class="o">/</span><span class="n">chrono</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>To configure:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">cmake</span><span class="o">-</span><span class="n">gui</span>
+</pre></div>
+</div>
+<p>Then to build (assuming ninja was used) go into the <code class="docutils literal"><span class="pre">build</span></code> directory and type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>chrono/chrono_build$ sudo ninja
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3><a class="reference external" href="http://api.projectchrono.org/module_vehicle_installation.html">VEHICLE Module</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="connecting-to-gazebo">
+<h3>Connecting to Gazebo<a class="headerlink" href="#connecting-to-gazebo" title="Permalink to this headline">¶</a></h3>
+<p>A <a class="reference external" href="https://github.com/amelmquist/Chrono_Gazebo">repo</a> was developed to connect Gazebo to Chrono.</p>
+<div class="section" id="id3">
+<h4>Install<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><ol class="arabic simple">
+<li><a class="reference external" href="https://github.com/amelmquist/Chrono_Gazebo">Install Gazebo 7 from source</a></li>
+</ol>
+</div></blockquote>
+</div>
+</div>
+</div>
+<div class="section" id="potential-fixes">
+<h2>Potential Fixes<a class="headerlink" href="#potential-fixes" title="Permalink to this headline">¶</a></h2>
+<p>Try updating <code class="docutils literal"><span class="pre">glib</span></code> with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">upgrade</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="issues">
+<h2>Issues:<a class="headerlink" href="#issues" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://groups.google.com/forum/#!topic/projectchrono/ETBnyS18MNM">https://groups.google.com/forum/#!topic/projectchrono/ETBnyS18MNM</a></li>
+<li><a class="reference external" href="https://groups.google.com/forum/#!topic/projectchrono/1GI3RiZI-2A">https://groups.google.com/forum/#!topic/projectchrono/1GI3RiZI-2A</a></li>
+<li><a class="reference external" href="https://stackoverflow.com/questions/13978692/strcpy-sse2-unaligned-s-not-found">https://stackoverflow.com/questions/13978692/strcpy-sse2-unaligned-s-not-found</a></li>
+<li><a class="reference external" href="https://sourceforge.net/p/irrlicht/bugs/375/">https://sourceforge.net/p/irrlicht/bugs/375/</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://vimeo.com/uwsbel">https://vimeo.com/uwsbel</a></li>
+<li><a class="reference external" href="http://sbel.wisc.edu/Animations/">http://sbel.wisc.edu/Animations/</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="old">
+<h2>OLD<a class="headerlink" href="#old" title="Permalink to this headline">¶</a></h2>
+<p>NOT NEEDED:</p>
+<p>make a build directory:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>src/Chrono_Gazebo/gazonoVehicle$ sudo mkdir build
+</pre></div>
+</div>
+<p>set up build environment:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>src/Chrono_Gazebo/gazonoVehicle$ sudo cmake CMakeLists.txt
+</pre></div>
+</div>
+<p>make:</p>
+<p>git clone git://git.code.sf.net/p/libosmscout/code libosmscout-code</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="polysync.html" class="btn btn-neutral float-right" title="Polysync" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ros_gazebo.html" class="btn btn-neutral" title="ROS and Gazebo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Huckleberry Febbo.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.1-rc1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
