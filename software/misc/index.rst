@@ -1,0 +1,14 @@
+misc
+======================
+.. toctree::
+   :maxdepth: 1
+
+   MPT3
+   BARC
+   autorally
+   editors
+   transferring_files
+   resources
+   thesis
+   misc
+   ninja
