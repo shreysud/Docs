@@ -9,3 +9,4 @@
    tf
    useful_resources
    useful_packages
+   my_ros

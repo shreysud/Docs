@@ -37,7 +37,7 @@
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="PhD Notes 0.0.1-rc1 documentation" href="../../index.html"/>
         <link rel="up" title="ROS" href="index.html"/>
-        <link rel="next" title="ROS and Gazebo" href="ros_gazebo.html"/>
+        <link rel="next" title="RViz" href="rviz.html"/>
         <link rel="prev" title="ROS" href="index.html"/> 
 
   
@@ -103,8 +103,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#id4">Installing Packages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id5">URDF</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tutorials">Tutorials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#packages-required-for-mavs">Packages required for <code class="docutils literal"><span class="pre">MAVS</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#packages-used-in-my-catkin-ws">Packages used in my catkin_ws</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#potential-issues">Potential Issues</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id6">permission denied: .gvfs</a></li>
 </ul>
@@ -114,13 +112,17 @@
 <li class="toctree-l4"><a class="reference internal" href="#my-bashrc">my .bashrc</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="ros_gazebo.html">ROS and Gazebo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rviz.html">RViz</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tf.html">tf</a></li>
-<li class="toctree-l3"><a class="reference internal" href="moveit.html">MoveIT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="useful_resources.html">Useful Resources</a></li>
 <li class="toctree-l3"><a class="reference internal" href="useful_packages.html">Useful ROS Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="my_ros.html">My Personal Build</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../gazebo/index.html">Gazebo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ros_gazebo/index.html">ROS and Gazebo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chrono/index.html">Project Chrono</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polysync/index.html">Polysync</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../julia/index.html">julia</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/index.html">git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linux/index.html">linux</a></li>
@@ -268,39 +270,6 @@
 <li><a class="reference external" href="http://duckietown.mit.edu/media/pdfs/1rpRisFoCYUm0XT78j-nAYidlh-cDtLCdEbIaBCnx9ew.pdf">http://duckietown.mit.edu/media/pdfs/1rpRisFoCYUm0XT78j-nAYidlh-cDtLCdEbIaBCnx9ew.pdf</a></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="packages-required-for-mavs">
-<h1>Packages required for <code class="docutils literal"><span class="pre">MAVS</span></code><a class="headerlink" href="#packages-required-for-mavs" title="Permalink to this headline">¶</a></h1>
-<p>as of 8/22/2017 on top of ros-kinetic-full:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">controller</span><span class="o">-</span><span class="n">manager</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">joint</span><span class="o">-</span><span class="n">state</span><span class="o">-</span><span class="n">controller</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">effort</span><span class="o">-</span><span class="n">controllers</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">teleop</span><span class="o">-</span><span class="n">twist</span><span class="o">-</span><span class="n">keyboard</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">pointcloud</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">laserscan</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">velodyne</span><span class="o">-</span><span class="n">description</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="packages-used-in-my-catkin-ws">
-<h1>Packages used in my catkin_ws<a class="headerlink" href="#packages-used-in-my-catkin-ws" title="Permalink to this headline">¶</a></h1>
-<p>as of 8/22/2017 on top of ros-kinetic-full:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">move</span><span class="o">-</span><span class="n">base</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">gmapping</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">amcl</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">ackermann</span><span class="o">-</span><span class="n">msgs</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">transmission</span><span class="o">-</span><span class="n">interface</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">moveit</span><span class="o">-</span><span class="n">ros</span><span class="o">-</span><span class="n">move</span><span class="o">-</span><span class="n">group</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">robotnik</span><span class="o">-</span><span class="n">sensors</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">robot</span><span class="o">-</span><span class="n">pose</span><span class="o">-</span><span class="n">ekf</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">moveit</span><span class="o">-</span><span class="n">kinematics</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">moveit</span><span class="o">-</span><span class="n">ros</span><span class="o">-</span><span class="n">visualization</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">moveit</span><span class="o">-</span><span class="n">planners</span><span class="o">-</span><span class="n">ompl</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">teb</span><span class="o">-</span><span class="n">local</span><span class="o">-</span><span class="n">planner</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">joint</span><span class="o">-</span><span class="n">limits</span><span class="o">-</span><span class="n">interface</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="nb">map</span><span class="o">-</span><span class="n">server</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">robot</span><span class="o">-</span><span class="n">state</span><span class="o">-</span><span class="n">publisher</span>
-</pre></div>
-</div>
 <p>Other packages:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libfcl</span><span class="o">-</span><span class="n">dev</span>
 </pre></div>
@@ -364,7 +333,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ros_gazebo.html" class="btn btn-neutral float-right" title="ROS and Gazebo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="rviz.html" class="btn btn-neutral float-right" title="RViz" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="ROS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
