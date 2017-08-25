@@ -36,9 +36,9 @@
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="PhD Notes 0.0.1-rc1 documentation" href="../../index.html"/>
-        <link rel="up" title="LaTex" href="index.html"/>
-        <link rel="next" title="LaTeX" href="latex.html"/>
-        <link rel="prev" title="LaTex" href="index.html"/> 
+        <link rel="up" title="LaTeX" href="index.html"/>
+        <link rel="next" title="Software Tools" href="software.html"/>
+        <link rel="prev" title="Install" href="install.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -92,34 +92,37 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../software.html">Software and Resources</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../software.html">Software</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ros/index.html">Simulation to Experimentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../julia/index.html">julia</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/index.html">git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linux/index.html">linux</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/index.html">Documentation</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">LaTex</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">LaTeX</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Beemer</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#adobe-reader">Adobe Reader</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#convert-to-individual-files">Convert to Individual Files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#syntax-highlighting-listings">Syntax Highlighting: listings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#syntax-highlighting-minted">Syntax Highlighting: minted</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#old">OLD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ffmpeg">FFmpeg</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#embedding-movies1">Embedding movies1:</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#embedding-movies2">Embedding movies2:</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#embedding-movies3">Embedding movies3:</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#animate-package">animate package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viewing-slides">Viewing slides</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#xpdf">xPDF</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="latex.html">LaTeX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="software.html">Software Tools</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../video/index.html">Video</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/index.html">misc</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../hardware/lidar.html">LiDAR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
 </ul>
 
             
@@ -164,9 +167,9 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../software.html">Software and Resources</a> &raquo;</li>
+          <li><a href="../software.html">Software</a> &raquo;</li>
         
-          <li><a href="index.html">LaTex</a> &raquo;</li>
+          <li><a href="index.html">LaTeX</a> &raquo;</li>
         
       <li>Beemer</li>
     
@@ -215,10 +218,11 @@
 </div>
 <div class="section" id="old">
 <h2>OLD<a class="headerlink" href="#old" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://heather.cs.ucdavis.edu/~matloff/beamer.html">http://heather.cs.ucdavis.edu/~matloff/beamer.html</a>
-FFmpeg
-——-
-<a class="reference external" href="https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu">https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu</a></p>
+<p><a class="reference external" href="http://heather.cs.ucdavis.edu/~matloff/beamer.html">http://heather.cs.ucdavis.edu/~matloff/beamer.html</a></p>
+</div>
+<div class="section" id="ffmpeg">
+<h2>FFmpeg<a class="headerlink" href="#ffmpeg" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu">https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu</a></p>
 <p><a class="reference external" href="https://stackoverflow.com/questions/10225403/how-can-i-extract-a-good-quality-jpeg-image-from-an-h264-video-file-with-ffmpeg">https://stackoverflow.com/questions/10225403/how-can-i-extract-a-good-quality-jpeg-image-from-an-h264-video-file-with-ffmpeg</a></p>
 <p>Change quality:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="o">.</span><span class="n">mp4</span> <span class="o">-</span><span class="n">qscale</span><span class="p">:</span><span class="n">v</span> <span class="mi">2</span> <span class="n">output_</span><span class="o">%</span><span class="mi">03</span><span class="n">d</span><span class="o">.</span><span class="n">jpg</span>
@@ -251,10 +255,11 @@ FFmpeg
 </div>
 <div class="section" id="animate-package">
 <h2>animate package<a class="headerlink" href="#animate-package" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://mirror.hmc.edu/ctan/macros/latex/contrib/animate/animate.pdf">http://mirror.hmc.edu/ctan/macros/latex/contrib/animate/animate.pdf</a>
-Viewing slides
-—————-
-Okular:</p>
+<p><a class="reference external" href="http://mirror.hmc.edu/ctan/macros/latex/contrib/animate/animate.pdf">http://mirror.hmc.edu/ctan/macros/latex/contrib/animate/animate.pdf</a></p>
+</div>
+<div class="section" id="viewing-slides">
+<h2>Viewing slides<a class="headerlink" href="#viewing-slides" title="Permalink to this headline">¶</a></h2>
+<p>Okular:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">okular</span>
 </pre></div>
 </div>
@@ -279,10 +284,10 @@ Okular:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="latex.html" class="btn btn-neutral float-right" title="LaTeX" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="software.html" class="btn btn-neutral float-right" title="Software Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="LaTex" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="install.html" class="btn btn-neutral" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

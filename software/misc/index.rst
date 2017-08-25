@@ -1,7 +1,7 @@
 misc
 ======================
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    MPT3
    BARC
@@ -13,3 +13,4 @@ misc
    misc
    matlab
    build
+   bib

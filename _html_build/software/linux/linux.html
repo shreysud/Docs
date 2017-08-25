@@ -92,17 +92,15 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../software.html">Software and Resources</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../software.html">Software</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../ros/index.html">Simulation to Experimentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../julia/index.html">julia</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/index.html">git</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">linux</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Linux</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#useful-linux-programs-with-julia">Useful Linux Programs with julia</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#also-using-ubuntu-software-program">Also using Ubuntu Software Program</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#java-jabref-references">Java (JabRef – references)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#useful-programs">Useful Programs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#basic-linux-commands">Basic Linux Commands</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#issues-and-fixes">Issues and Fixes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#useful-tools">Useful Tools</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#etc-bash-bashrc-vs-home-bashrc">/etc/bash.bashrc  vs. $HOME/.bashrc</a></li>
 </ul>
 </li>
@@ -110,12 +108,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../docs/index.html">Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../latex/index.html">LaTex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../video/index.html">Video</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../misc/index.html">misc</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../hardware/lidar.html">LiDAR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
 </ul>
 
             
@@ -160,7 +158,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../software.html">Software and Resources</a> &raquo;</li>
+          <li><a href="../software.html">Software</a> &raquo;</li>
         
           <li><a href="index.html">linux</a> &raquo;</li>
         
@@ -185,14 +183,14 @@
             
   <div class="section" id="linux">
 <h1>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="useful-linux-programs-with-julia">
-<h2>Useful Linux Programs with julia<a class="headerlink" href="#useful-linux-programs-with-julia" title="Permalink to this headline">¶</a></h2>
-<p>In the Linux terminal:</p>
+<div class="section" id="useful-programs">
+<h2>Useful Programs<a class="headerlink" href="#useful-programs" title="Permalink to this headline">¶</a></h2>
+<p>In the terminal:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">dpkg</span> <span class="o">--</span><span class="n">install</span> <span class="n">atom</span><span class="o">-</span><span class="n">amd64</span><span class="o">.</span><span class="n">deb</span>
 <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">ffmpeg</span>
 <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">cmake</span> <span class="n">bar</span> <span class="n">time</span> <span class="n">binutils</span> <span class="n">make</span> <span class="n">libssl</span><span class="o">-</span><span class="n">dev</span> <span class="n">gfortran</span> <span class="n">libunwind8</span><span class="o">-</span><span class="n">dev</span> <span class="n">gcc</span> <span class="n">g</span><span class="o">++</span> <span class="c1">#clang curl perl wget m4 patch pkg-config</span>
 <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">gsfonts</span><span class="o">-</span><span class="n">x11</span>
-<span class="c1">#sudo apt-get install notepadqq</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">notepadqq</span>
 <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
 <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">gfortran</span>
 <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libnlopt0</span>
@@ -209,47 +207,6 @@
 <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">rpm</span>
 <span class="n">apm</span> <span class="n">install</span> <span class="n">latex</span>
 <span class="n">sudo</span> <span class="n">apt</span> <span class="n">autoremove</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="also-using-ubuntu-software-program">
-<h2>Also using Ubuntu Software Program<a class="headerlink" href="#also-using-ubuntu-software-program" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Synaptic Package Manager</li>
-</ul>
-</div>
-<div class="section" id="java-jabref-references">
-<h2>Java (JabRef – references)<a class="headerlink" href="#java-jabref-references" title="Permalink to this headline">¶</a></h2>
-<p>First I tried a few things including:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">default</span><span class="o">-</span><span class="n">jre</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
-</pre></div>
-</div>
-<p>And:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="p">:</span><span class="n">openjdk</span><span class="o">-</span><span class="n">r</span><span class="o">/</span><span class="n">ppa</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">openjdk</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">jre</span>
-</pre></div>
-</div>
-<p>This messed stuff up and then I deleted all of my old java versions using:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">natilus</span>
-</pre></div>
-</div>
-<p>Ended up needing to follow <cite>this advice &lt;http://askubuntu.com/questions/251213/unable-to-install-default-jdk
-&gt;</cite>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="p">:</span><span class="n">webupd8team</span><span class="o">/</span><span class="n">java</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">oracle</span><span class="o">-</span><span class="n">java8</span><span class="o">-</span><span class="n">installer</span>
-<span class="n">java</span> <span class="o">-</span><span class="n">version</span>
-<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">oracle</span><span class="o">-</span><span class="n">java8</span><span class="o">-</span><span class="nb">set</span><span class="o">-</span><span class="n">default</span>
-</pre></div>
-</div>
-<p>This finally worked and I was able to run JabRef with no problem using:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">java</span> <span class="o">-</span><span class="n">jar</span> <span class="n">JabRef</span><span class="o">-</span><span class="mf">3.8</span><span class="o">.</span><span class="n">jar</span>
-</pre></div>
-</div>
-<p>If something is broken:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">f</span> <span class="n">install</span>
 </pre></div>
 </div>
 </div>
@@ -276,40 +233,11 @@
 <p>Run a jar file:
 java -jar lad</p>
 </div>
-<div class="section" id="issues-and-fixes">
-<h2>Issues and Fixes<a class="headerlink" href="#issues-and-fixes" title="Permalink to this headline">¶</a></h2>
-<p>1. Trying to uninstall sphinx so that I could get a newer version without bugs:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>febbo@febbo-HP-ZBook-17-G2:~/Desktop/useful downloads$ pip uninstall sphinx
-Cannot remove entries from nonexistent file /home/febbo/anaconda3/lib/python3.5/site-packages/easy-install.pth
-</pre></div>
-</div>
-<p>The <a class="reference external" href="https://github.com/ContinuumIO/anaconda-issues/issues/542">problem</a>:
-This probably won’t work:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">setuptools</span>
-</pre></div>
-</div>
-<p>The fix, was to download <code class="docutils literal"><span class="pre">ez_setup.py</span></code> from <a class="reference external" href="https://pypi.python.org/pypi/setuptools#installation-instructions">this link</a>  and run it in the terminal:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>febbo@febbo-HP-ZBook-17-G2:~$ python ez_setup.py
-</pre></div>
-</div>
-<p>Then I could uninstall Sphinx-1.4.1:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>febbo@febbo-HP-ZBook-17-G2:~$ pip uninstall sphinx
-Uninstalling Sphinx-1.4.1:
-/home/febbo/anaconda3/bin/sphinx-apidoc
-/home/febbo/anaconda3/bin/sphinx-autogen
-/home/febbo/anaconda3/bin/sphinx-build
-/home/febbo/anaconda3/bin/sphinx-quickstart
-/home/febbo/anaconda3/lib/python3.5/site-packages/Sphinx-1.4.1-py3.5.egg
-Proceed (y/n)? y
-Successfully uninstalled Sphinx-1.4.1
-</pre></div>
-</div>
-<p>There was reason I needed to uninstall this version of Sphinx was because the citations where not working.</p>
-<p>Finally I installed Sphinx-1.5.2:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#Install from newest dev version in stable branch::</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">sphinx</span><span class="o">-</span><span class="n">doc</span><span class="o">/</span><span class="n">sphinx</span><span class="nd">@stable</span>
-</pre></div>
-</div>
+<div class="section" id="useful-tools">
+<h2>Useful Tools<a class="headerlink" href="#useful-tools" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Synaptic Package Manager</li>
+</ul>
 </div>
 <div class="section" id="etc-bash-bashrc-vs-home-bashrc">
 <h2>/etc/bash.bashrc  vs. $HOME/.bashrc<a class="headerlink" href="#etc-bash-bashrc-vs-home-bashrc" title="Permalink to this headline">¶</a></h2>

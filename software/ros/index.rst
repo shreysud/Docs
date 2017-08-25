@@ -1,13 +1,13 @@
-Simulation to Experimentation
+`ROS <http://www.ros.org/>`_
 ====================================
-.. toctree::
-   :maxdepth: 1
 
-   gazebo
+   * `basic ROS concepts <http://wiki.ros.org/ROS/Concepts>`_
+   * `best practices <https://github.com/ethz-asl/ros_best_practices/wiki>`_
+
+.. toctree::
+   :maxdepth: 2
+
    ros
-   ros_gazebo
-   chrono
-   polysync
    rviz
    tf
    moveit

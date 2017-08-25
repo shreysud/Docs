@@ -34,6 +34,7 @@ which needs:
 OLD
 ----
 http://heather.cs.ucdavis.edu/~matloff/beamer.html
+
 FFmpeg
 -------
 https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu
@@ -78,6 +79,7 @@ https://tex.stackexchange.com/questions/429/animation-in-pdf-presentations-witho
 animate package
 ----------------
 http://mirror.hmc.edu/ctan/macros/latex/contrib/animate/animate.pdf
+
 Viewing slides
 ----------------
 Okular:

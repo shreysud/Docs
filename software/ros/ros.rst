@@ -1,10 +1,3 @@
-`ROS <http://www.ros.org/>`_
-******************
-The `basic concepts <http://wiki.ros.org/ROS/Concepts>`_
-
-`best practices <https://github.com/ethz-asl/ros_best_practices/wiki>`_
-
-
 `Installing ROS <http://www.ros.org/install/>`_
 =================================================
 Then eventually, for my machine, `I followed <http://wiki.ros.org/kinetic/Installation/Ubuntu>`_
