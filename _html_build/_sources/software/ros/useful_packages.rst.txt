@@ -1,14 +1,14 @@
 Useful ROS Packages
 *********************
 
-`Simulated Car Demo <http://www.ros.org/news/2017/06/simulated-car-demo.html`_
-===============================================================
+`Simulated Car Demo <http://www.ros.org/news/2017/06/simulated-car-demo.html>`_
+====================================================================================
 
 A recent package by Tully Foote with a Gazebo model of Mcity using ROS Kinetic and Gazebo 8.
 
 
 `Eigen <http://eigen.tuxfamily.org/index.php?title=Main_Page>`_
-================================================
+=======================================================================
 
 a C++ library that I use for quaternion transformations, to `get started <http://eigen.tuxfamily.org/dox/GettingStarted.html>`_
 
@@ -32,7 +32,7 @@ A C++ implementation of ROS that allows users to quickly interact with ROS.
 
 a meta package for common messages
 
-`message_filters <http://wiki.ros.org/message_filters>`
+`message_filters <http://wiki.ros.org/message_filters>`_
 ===========================================================
 
 
@@ -59,14 +59,14 @@ install with:
   sudo apt-get install ros-kinetic-navigation
 
 `hector_localization <http://wiki.ros.org/hector_localization?distro=kinetic>`_
-=================================================================
+====================================================================================
 
 install with:
 ::
 
   sudo apt-get install ros-kinetic-hector-localization
 
-`ros_control <http://wiki.ros.org/ros_control>`
+`ros_control <http://wiki.ros.org/ros_control>`_
 ========================================================
 install with:
 ::

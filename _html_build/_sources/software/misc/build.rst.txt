@@ -13,10 +13,10 @@ catkin-tools
 -------------
 These tools are used to facilitate a merged build process. That is several inter-dependent but separately developed CMake projects
 
-`Installation <  http://catkin-tools.readthedocs.io/en/latest/installing.html>`_:
+`Installation <http://catkin-tools.readthedocs.io/en/latest/installing.html>`_:
 ::
 
-  udo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" > /etc/apt/sources.list.d/ros-latest.list'
+  sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" > /etc/apt/sources.list.d/ros-latest.list'
   wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
   sudo apt-get update
   sudo apt-get install python-catkin-tools
@@ -33,7 +33,7 @@ to clean out an old build:
 If you move a package, delete the ``build`` and the ``devel`` folders then do a ``catkin_make``
 
 
-`CMake <https://cmake.org/>`
+`CMake <https://cmake.org/>`_
 =================================
 
 `Ninja <https://ninja-build.org/>`_

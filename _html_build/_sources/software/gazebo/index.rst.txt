@@ -104,7 +104,7 @@ Resources:
 Useful Software
 =================
 
-  * `Blenber <https://wiki.blender.org/index.php/Doc:2.4/Manual/Modeling/Objects/Selecting>`_
+  * `Blender <https://wiki.blender.org/index.php/Doc:2.4/Manual/Modeling/Objects/Selecting>`_
 
 
 Issues

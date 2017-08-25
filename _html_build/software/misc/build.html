@@ -35,7 +35,10 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="PhD Notes 0.0.1-rc1 documentation" href="../../index.html"/> 
+    <link rel="top" title="PhD Notes 0.0.1-rc1 documentation" href="../../index.html"/>
+        <link rel="up" title="misc" href="index.html"/>
+        <link rel="next" title="Reference Management" href="bib.html"/>
+        <link rel="prev" title="MATLAB" href="matlab.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -88,9 +91,41 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../software.html">Software and Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../hardware/lidar.html">LiDAR</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../software.html">Software</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ros/index.html">ROS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gazebo/index.html">Gazebo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ros_gazebo/index.html">ROS and Gazebo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chrono/index.html">Project Chrono</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polysync/index.html">Polysync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../julia/index.html">julia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linux/index.html">linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">misc</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="MPT3.html">MPT3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BARC.html">BARC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="autorally.html">AUTORALLY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="editors.html">Different Text Editors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transferring_files.html">Transferring Files To A Website</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resources.html">Community Help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thesis.html">Making A Thesis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="misc.html">Miscellaneous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="matlab.html">MATLAB</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Build Tools</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">catkin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">CMake</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Ninja</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Linuxbrew</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="bib.html">Reference Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
 </ul>
 
             
@@ -135,6 +170,10 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="../software.html">Software</a> &raquo;</li>
+        
+          <li><a href="index.html">misc</a> &raquo;</li>
+        
       <li>Build Tools</li>
     
     
@@ -163,8 +202,8 @@
 <div class="section" id="catkin-tools">
 <h3>catkin-tools<a class="headerlink" href="#catkin-tools" title="Permalink to this headline">¶</a></h3>
 <p>These tools are used to facilitate a merged build process. That is several inter-dependent but separately developed CMake projects</p>
-<p><a href="#id4"><span class="problematic" id="id5">`Installation &lt;  http://catkin-tools.readthedocs.io/en/latest/installing.html&gt;`_</span></a>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">udo</span> <span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;echo &quot;deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#39;</span>
+<p><a class="reference external" href="http://catkin-tools.readthedocs.io/en/latest/installing.html">Installation</a>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;echo &quot;deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#39;</span>
 <span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">packages</span><span class="o">.</span><span class="n">ros</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">ros</span><span class="o">.</span><span class="n">key</span> <span class="o">-</span><span class="n">O</span> <span class="o">-</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">add</span> <span class="o">-</span>
 <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
 <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">catkin</span><span class="o">-</span><span class="n">tools</span>
@@ -181,18 +220,18 @@
 <p>If you move a package, delete the <code class="docutils literal"><span class="pre">build</span></code> and the <code class="docutils literal"><span class="pre">devel</span></code> folders then do a <code class="docutils literal"><span class="pre">catkin_make</span></code></p>
 </div>
 </div>
-<div class="section" id="cmake-https-cmake-org">
-<h2><cite>CMake &lt;https://cmake.org/&gt;</cite><a class="headerlink" href="#cmake-https-cmake-org" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="id2">
-<h2><a class="reference external" href="https://ninja-build.org/">Ninja</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference external" href="https://cmake.org/">CMake</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id3">
+<h2><a class="reference external" href="https://ninja-build.org/">Ninja</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>a small build system:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ninja</span><span class="o">-</span><span class="n">build</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h2><a class="reference external" href="http://linuxbrew.sh/">Linuxbrew</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2><a class="reference external" href="http://linuxbrew.sh/">Linuxbrew</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>For working with Linux and Mac
 install:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">linuxbrew</span><span class="o">-</span><span class="n">wrapper</span>
@@ -212,6 +251,15 @@ install:</p>
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bib.html" class="btn btn-neutral float-right" title="Reference Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="matlab.html" class="btn btn-neutral" title="MATLAB" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

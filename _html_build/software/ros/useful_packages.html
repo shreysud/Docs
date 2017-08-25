@@ -38,7 +38,7 @@
     <link rel="top" title="PhD Notes 0.0.1-rc1 documentation" href="../../index.html"/>
         <link rel="up" title="ROS" href="index.html"/>
         <link rel="next" title="Gazebo" href="../gazebo/index.html"/>
-        <link rel="prev" title="MoveIT" href="moveit.html"/> 
+        <link rel="prev" title="tf" href="tf.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -107,30 +107,29 @@
 <li class="toctree-l3"><a class="reference internal" href="ros.html#misc">Misc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rviz.html">RViz</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tf.html">tf</a></li>
-<li class="toctree-l3"><a class="reference internal" href="moveit.html">MoveIT</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Useful ROS Packages</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#simulated-car-demo-http-www-ros-org-news-2017-06-simulated-car-demo-html">Simulated Car Demo &lt;http://www.ros.org/news/2017/06/simulated-car-demo.html</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id1">Eigen</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2">roscpp</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id3">rospy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id4">Common Messages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#message-filters-http-wiki-ros-org-message-filters"><cite>message_filters &lt;http://wiki.ros.org/message_filters&gt;</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id5">PCL</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id6">Ackermann Group</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id7">navigation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id8">hector_localization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ros-control-http-wiki-ros-org-ros-control"><cite>ros_control &lt;http://wiki.ros.org/ros_control&gt;</cite></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id9">pointcloud_to_laserscan</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id10">teleop_twist_keyboard</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id11">Cartographer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id12">laser_pipeline</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id13">robot_localization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Simulated Car Demo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Eigen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">roscpp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">rospy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Common Messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">message_filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">PCL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Ackermann Group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">navigation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">hector_localization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">ros_control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">pointcloud_to_laserscan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">teleop_twist_keyboard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">Cartographer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">laser_pipeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">robot_localization</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#robot-state-publisher">robot_state_publisher</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id14">clock</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id15">ControllIt!</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id16">MoveIT</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id18">ADAS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id19">ROS tutorial for Autonomous Cars</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18">ControllIt!</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id19">MoveIT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id21">ADAS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id22">ROS tutorial for Autonomous Cars</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ipa320">IPA320</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#potential-vehicle-models">Potential Vehicle Models</a></li>
 </ul>
@@ -219,12 +218,12 @@
             
   <div class="section" id="useful-ros-packages">
 <h1>Useful ROS Packages<a class="headerlink" href="#useful-ros-packages" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="simulated-car-demo-http-www-ros-org-news-2017-06-simulated-car-demo-html">
-<h2><a class="reference internal" href="#simulated-car-demo-http-www-ros-org-news-2017-06-simulated-car-demo-html">Simulated Car Demo &lt;http://www.ros.org/news/2017/06/simulated-car-demo.html</a><a class="headerlink" href="#simulated-car-demo-http-www-ros-org-news-2017-06-simulated-car-demo-html" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2><a class="reference external" href="http://www.ros.org/news/2017/06/simulated-car-demo.html">Simulated Car Demo</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>A recent package by Tully Foote with a Gazebo model of Mcity using ROS Kinetic and Gazebo 8.</p>
 </div>
-<div class="section" id="id1">
-<h2><a class="reference external" href="http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2><a class="reference external" href="http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>a C++ library that I use for quaternion transformations, to <a class="reference external" href="http://eigen.tuxfamily.org/dox/GettingStarted.html">get started</a></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -232,70 +231,70 @@
 </div>
 <p><a class="reference external" href="http://wiki.ros.org/jade/Migration#Eigen_CMake_Module_in_cmake_modules">http://wiki.ros.org/jade/Migration#Eigen_CMake_Module_in_cmake_modules</a></p>
 </div>
-<div class="section" id="id2">
-<h2><a class="reference external" href="http://wiki.ros.org/roscpp_tutorials">roscpp</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2><a class="reference external" href="http://wiki.ros.org/roscpp_tutorials">roscpp</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>A C++ implementation of ROS that allows users to quickly interact with ROS.</p>
 </div>
-<div class="section" id="id3">
-<h2><a class="reference external" href="http://wiki.ros.org/rospy/Overview">rospy</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="id4">
-<h2><a class="reference external" href="http://wiki.ros.org/common_msgs">Common Messages</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>a meta package for common messages</p>
-</div>
-<div class="section" id="message-filters-http-wiki-ros-org-message-filters">
-<h2><cite>message_filters &lt;http://wiki.ros.org/message_filters&gt;</cite><a class="headerlink" href="#message-filters-http-wiki-ros-org-message-filters" title="Permalink to this headline">¶</a></h2>
-<p>Make the decision to use data based off of the time stamp. Basically sequence the data</p>
+<h2><a class="reference external" href="http://wiki.ros.org/rospy/Overview">rospy</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="id5">
-<h2><a class="reference external" href="http://wiki.ros.org/pcl/Tutorials">PCL</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<p>Point cloud library</p>
+<h2><a class="reference external" href="http://wiki.ros.org/common_msgs">Common Messages</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>a meta package for common messages</p>
 </div>
 <div class="section" id="id6">
-<h2><a class="reference external" href="http://wiki.ros.org/Ackermann%20Group">Ackermann Group</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<p>Group that supports Ackermann steering geometry.</p>
+<h2><a class="reference external" href="http://wiki.ros.org/message_filters">message_filters</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Make the decision to use data based off of the time stamp. Basically sequence the data</p>
 </div>
 <div class="section" id="id7">
-<h2><a class="reference external" href="http://wiki.ros.org/navigation">navigation</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference external" href="http://wiki.ros.org/pcl/Tutorials">PCL</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>Point cloud library</p>
+</div>
+<div class="section" id="id8">
+<h2><a class="reference external" href="http://wiki.ros.org/Ackermann%20Group">Ackermann Group</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>Group that supports Ackermann steering geometry.</p>
+</div>
+<div class="section" id="id9">
+<h2><a class="reference external" href="http://wiki.ros.org/navigation">navigation</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <p>install with:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">navigation</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id8">
-<h2><a class="reference external" href="http://wiki.ros.org/hector_localization?distro=kinetic">hector_localization</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h2><a class="reference external" href="http://wiki.ros.org/hector_localization?distro=kinetic">hector_localization</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <p>install with:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">hector</span><span class="o">-</span><span class="n">localization</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="ros-control-http-wiki-ros-org-ros-control">
-<h2><cite>ros_control &lt;http://wiki.ros.org/ros_control&gt;</cite><a class="headerlink" href="#ros-control-http-wiki-ros-org-ros-control" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h2><a class="reference external" href="http://wiki.ros.org/ros_control">ros_control</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
 <p>install with:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">ros</span><span class="o">-</span><span class="n">control</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">ros</span><span class="o">-</span><span class="n">controllers</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id9">
-<h2><a class="reference external" href="http://wiki.ros.org/pointcloud_to_laserscan">pointcloud_to_laserscan</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h2><a class="reference external" href="http://wiki.ros.org/pointcloud_to_laserscan">pointcloud_to_laserscan</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
 <p>install with:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">pointcloud</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">laserscan</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id10">
-<h2><a class="reference external" href="http://wiki.ros.org/teleop_twist_keyboard">teleop_twist_keyboard</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id13">
+<h2><a class="reference external" href="http://wiki.ros.org/teleop_twist_keyboard">teleop_twist_keyboard</a><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="id11">
-<h2><a class="reference external" href="https://opensource.googleblog.com/2016/10/introducing-cartographer.html">Cartographer</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h2><a class="reference external" href="https://opensource.googleblog.com/2016/10/introducing-cartographer.html">Cartographer</a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
 <p>A Google map builder</p>
 </div>
-<div class="section" id="id12">
-<h2><a class="reference external" href="http://wiki.ros.org/laser_pipeline">laser_pipeline</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id15">
+<h2><a class="reference external" href="http://wiki.ros.org/laser_pipeline">laser_pipeline</a><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
 <p>Meta-package for laser data processing</p>
 </div>
-<div class="section" id="id13">
-<h2><a class="reference external" href="http://wiki.ros.org/robot_localization">robot_localization</a><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id16">
+<h2><a class="reference external" href="http://wiki.ros.org/robot_localization">robot_localization</a><a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
 <p>Provide state estimates given sensor data</p>
 </div>
 <div class="section" id="robot-state-publisher">
@@ -316,17 +315,17 @@
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="id14">
-<h2><a class="reference external" href="http://wiki.ros.org/Clock">clock</a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id17">
+<h2><a class="reference external" href="http://wiki.ros.org/Clock">clock</a><a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
 <p>For a ROS node to use the <code class="docutils literal"><span class="pre">/clock</span></code> topic set the <code class="docutils literal"><span class="pre">/use_sim_time</span></code> parameter before node is started</p>
 </div>
-<div class="section" id="id15">
-<h2><a class="reference external" href="http://robotcontrolit.com/installation">ControllIt!</a><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id18">
+<h2><a class="reference external" href="http://robotcontrolit.com/installation">ControllIt!</a><a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="id16">
-<h2><a class="reference external" href="http://moveit.ros.org/">MoveIT</a><a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id17">
-<h3><a class="reference external" href="http://moveit.ros.org/install/">Install</a><a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id19">
+<h2><a class="reference external" href="http://moveit.ros.org/">MoveIT</a><a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id20">
+<h3><a class="reference external" href="http://moveit.ros.org/install/">Install</a><a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
 <p>ROS Kinetic on Ubuntu:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">moveit</span>
 </pre></div>
@@ -337,12 +336,12 @@
 <p>Go to <a class="reference external" href="https://github.com/ros-planning/moveit_tutorials/pull/45">this link</a> and download the PDF for instructions.</p>
 </div>
 </div>
-<div class="section" id="id18">
-<h2><a class="reference external" href="http://wiki.ros.org/Robots/ADAS_Development_Vehicle_Kit">ADAS</a><a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id21">
+<h2><a class="reference external" href="http://wiki.ros.org/Robots/ADAS_Development_Vehicle_Kit">ADAS</a><a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
 <p>Great example for controlling autonomous vehicles.</p>
 </div>
-<div class="section" id="id19">
-<h2><a class="reference external" href="https://www.youtube.com/watch?v=jbimBoI42AM">ROS tutorial for Autonomous Cars</a><a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id22">
+<h2><a class="reference external" href="https://www.youtube.com/watch?v=jbimBoI42AM">ROS tutorial for Autonomous Cars</a><a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="http://www.robotigniteacademy.com/en/">http://www.robotigniteacademy.com/en/</a></p>
 </div>
 <div class="section" id="ipa320">
@@ -381,7 +380,7 @@
         <a href="../gazebo/index.html" class="btn btn-neutral float-right" title="Gazebo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="moveit.html" class="btn btn-neutral" title="MoveIT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tf.html" class="btn btn-neutral" title="tf" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
