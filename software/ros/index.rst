@@ -10,5 +10,4 @@
    ros
    rviz
    tf
-   moveit
    useful_packages
