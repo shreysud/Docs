@@ -113,23 +113,3 @@ Useful Questions
 
   * `good path following code <https://answers.ros.org/question/234491/good-path-following-controller-for-ros/>`_
   * https://github.com/osrf/homebrew-simulation/issues/167
-
-
-Misc
-=========
-
-my .bashrc
----------------
-sourced
-::
-
-  source /opt/ros/kinetic/setup.bash
-  source /home/febbo/Documents/workspace/tutorials/catographer_ws/install_isolated/setup.bash
-  source /home/febbo/Documents/workspace/tutorials/velodyne_simulator/devel/setup.bash
-  source /home/febbo/Documents/workspace/tutorials/kobuki_desktop/devel/setup.bash
-  source /home/febbo/.julia/v0.6/MAVs/catkin_ws/devel/setup.bash
-  source /home/febbo/Documents/workspace/tutorials/mastering_ros/chapter_3_codes/devel/setup.bash
-  source /home/febbo/catkin_ws/devel/setup.bash
-  alias tf='cd /var/tmp && rosrun tf view_frames && evince frames.pdf &'
-  . ~/.bash_profile
-  source /home/febbo/ros_catkin_ws/install_isolated/setup.bash

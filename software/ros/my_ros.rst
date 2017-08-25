@@ -3,7 +3,6 @@ My Personal Build
 
 Packages required for ``MAVS``
 ==============================
-
 as of 8/22/2017 on top of ros-kinetic-full:
 ::
 
@@ -35,3 +34,20 @@ as of 8/22/2017 on top of ros-kinetic-full:
   sudo apt-get install ros-kinetic-joint-limits-interface
   sudo apt-get install ros-kinetic-map-server
   sudo apt-get install ros-kinetic-robot-state-publisher
+
+
+my ``.bashrc``
+===================
+sourced:
+::
+
+  source /opt/ros/kinetic/setup.bash
+  source /home/febbo/Documents/workspace/tutorials/catographer_ws/install_isolated/setup.bash
+  source /home/febbo/Documents/workspace/tutorials/velodyne_simulator/devel/setup.bash
+  source /home/febbo/Documents/workspace/tutorials/kobuki_desktop/devel/setup.bash
+  source /home/febbo/.julia/v0.6/MAVs/catkin_ws/devel/setup.bash
+  source /home/febbo/Documents/workspace/tutorials/mastering_ros/chapter_3_codes/devel/setup.bash
+  source /home/febbo/catkin_ws/devel/setup.bash
+  alias tf='cd /var/tmp && rosrun tf view_frames && evince frames.pdf &'
+  . ~/.bash_profile
+  source /home/febbo/ros_catkin_ws/install_isolated/setup.bash
