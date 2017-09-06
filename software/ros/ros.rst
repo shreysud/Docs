@@ -38,6 +38,23 @@ I choose the second option (recommended one) for ``kinetic``
       sudo apt-get remove libshiboken*
 
 
+gazebo_ros_pkgs
+^^^^^^^^^^^^^^^^^^^
+http://gazebosim.org/tutorials?tut=ros_installing&ver=1.9%2B&cat=connect_ros
+After installing ``ROS`` from `source <http://wiki.ros.org/Installation/Source>`_ with the Desktop Install you will also need to put the following into the ``/ros_catkin_ws/src`` folder:
+::
+
+  git clone https://github.com/ros-perception/image_common -b hydro-devel
+  git clone https://github.com/ros-controls/control_toolbox -b kinetic-devel
+  git clone https://github.com/ros-controls/ros_control -b kinetic-devel
+  git clone https://github.com/ros-controls/realtime_tools -b kinetic-devel
+
+Then rebuild the workspace:
+::
+
+  ./src/catkin/bin/catkin_make_isolated --install
+
+
 Uninstalling ROS
 =================================================
 If you're running Ubuntu, and installed ROS with apt-get, the first step would be:

@@ -1,4 +1,4 @@
-Gazebo
+hGazebo
 *******
 
 
@@ -27,20 +27,79 @@ In the above example we also added the ``/worlds`` folder.
 
   Using the gui to create models is limited because the default full version of ros kinetic does not let you edit the models after you save them. So, then I started to learn how to make the models directly using XML. The only way to get around this is to build from source but then you won;t be able to use any ROS Ubuntu package related to Gazebo from the ROS deb repo.
 
-From source
-------------
+From source (option A)
+--------------------------
 
-To get a stable branch:
+Follow `these instructions <http://gazebosim.org/tutorials?tut=install_from_source>`_
+
+Additional notes:
+^^^^^^^^^^^^^^^^^^
+
+* Step 1:
+
+  To get the ``Gazebo-8`` stable branch:
+  ::
+
+    /opt$ sudo hg clone https://bitbucket.org/osrf/gazebo /opt/gazebo -b gazebo8
+
+  To get the ``Gazebo-7`` stable branch:
+  ::
+
+    /opt$ sudo hg clone https://bitbucket.org/osrf/gazebo /opt/gazebo -b gazebo7
+
+sudo hg clone https://bitbucket.org/osrf/gazebo /tmp/gazebo -b gazebo7
+
+* Step 3:
+
+  Type:
+  ::
+
+    /opt/gazebo$ sudo cmake CMakeLists.txt
+
+* Step 7:
+
+  Then using `checkinstall <https://help.ubuntu.com/community/CheckInstall>`_. Type:
+  ::
+
+    sudo checkinstall
+
+
+  Then you can remove it from your system anytime using:
+  ::
+
+    dpkg -r build
+
+  In the `/opt/gazebo/build` directory.
+
+From source (option B) -preferred for ``Gazebo-7``
+---------------------------------------------------
+http://gazebosim.org/tutorials?tut=install_dependencies_from_source
+
+
+Potential Issue
+^^^^^^^^^^^^^^^^^^^^^
+If not sourced preperly:
 ::
 
-  /opt$ sudo hg clone https://bitbucket.org/osrf/gazebo /opt/gazebo -b gazebo8
+  febbo@febbo-HP-ZBook-17-G2:~$ gazebo
+  gazebo: error while loading shared libraries: libgazebo_common.so.7: cannot open shared object file: No such file or directory
 
-Then try using `checkinstall <https://help.ubuntu.com/community/CheckInstall>`_. Then you can remove it from your system anytime using:
+Then try:
 ::
 
-  dpkg -r build
+  febbo@febbo-HP-ZBook-17-G2:~$ find / -name 'libgazebo_common.so.7' 2>/dev/null
+  /usr/local/lib/libgazebo_common.so.7
+  /tmp/gazebo/build/gazebo/common/libgazebo_common.so.7
 
-In the `/opt/gazebo/build` directory.
+And updated the ``/etc/bash.bashrc`` file appropriately:
+::
+
+  gksu gedit /etc/bash.bashrc
+
+By adding (in this case):
+::
+
+  export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 Terminology
 ============

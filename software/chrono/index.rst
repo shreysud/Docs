@@ -4,11 +4,12 @@ Project Chrono
 Background
 ===========
 
-Physics simulator organized as a set of modules that has a high-fidelity HMMWV model validated using Adams.
+Physics simulator organized as a set of modules that has a high-fidelity HMWWV model validated using Adams.
 
 
 `Install <http://api.projectchrono.org/tutorial_install_chrono.html>`_
-==========
+==========================================================================
+
 Get the `IRRlicht engine <http://irrlicht.sourceforge.net/downloads>`_
 --------------------------------
 
@@ -69,7 +70,10 @@ A `repo <https://github.com/amelmquist/Chrono_Gazebo>`_ was developed to connect
 Install
 ^^^^^^^^^^^
   1) `Install Gazebo 7 from source <https://github.com/amelmquist/Chrono_Gazebo>`_
+  2) run:
+  ::
 
+    sudo apt-get install libogre-1.9-dev
 
 
 Potential Fixes
@@ -117,3 +121,27 @@ make:
 
 
 git clone git://git.code.sf.net/p/libosmscout/code libosmscout-code
+
+
+Shared Pointers
+=================
+http://api.projectchrono.org/shared_pointers.html
+
+TEMP
+=======
+gazonoVehicle.cc
+
+
+//gazebo_ros includes NOTE because ros is not in usr/include/ there are sourcing issues
+#include <ros/callback_queue.h>
+#include <ros/subscribe_options.h>
+#include <ros/ros.h>
+#include "boost/thread/mutex.hpp"
+#include <std_msgs/Float64.h>
+
+
+Issue:
+
+/usr/bin/ld: cannot find -lpthreads
+
+https://stackoverflow.com/questions/30600978/cpp-usr-bin-ld-cannot-find-lnameofthelibrary
