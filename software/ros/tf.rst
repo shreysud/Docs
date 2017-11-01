@@ -1,14 +1,30 @@
-tf
-****
+`tf2 <http://docs.ros.org/lunar/api/tf2/html/>`_
+*****************************************************
 
+This package uses `geometry_msgs <http://wiki.ros.org/geometry_msgs>`_ for some of the messages.
+
+Useful `functions <http://docs.ros.org/lunar/api/tf2/html/functions_func.html>`_
+===================================================================================
+
+.. warning::
+
+  use tf2 not tf
 
 Commands
 ===========
 
-roswtf
+Check tf tree:
+::
 
-rosrun tf tf_monitor
+  roswtf
+  rosrun tf tf_monitor
+  rosrun tf view_frames
 
+
+to print a particular transformation:
+::
+
+  rosrun tf tf_echo /map /odom
 
 Joint States
 =============
@@ -66,3 +82,17 @@ Issues
   * `quaternions <http://answers.ros.org/question/55923/tfquaternion-syntax-question/>`_
   * `using tf <http://answers.ros.org/question/87726/applying-rotations-to-coordinate-frames-using-tf/>`_
   * `joint states <http://answers.gazebosim.org/question/4205/joint_state-ros-topic-from-gazebo-and-ros_control/>`_
+
+
+Potential Errors
+=================
+
+.. note::
+
+  potential error:
+  ::
+
+    fatal error: tf/transform_broadcaster.h: No such file or directory
+    compilation terminated.
+
+  Use tf2! The new version of tf.

@@ -86,3 +86,9 @@ in my ``$HOME/.bashrc``:
   export GAZEBO_PLUGIN_PATH=/home/febbo/.julia/v0.5/OCP/MAVs/workspace/src/velodyne_plugin/build/:${GAZEBO_PLUGIN_PATH}
   source /opt/ros/kinetic/setup.bash
   export ROS_PACKAGE_PATH=/home/febbo/.julia/v0.5/OCP/MAVs/workspace:$ROS_PACKAGE_PATH
+
+
+Ubuntu package manager
+------------------------
+
+https://launchpad.net/ubuntu/+source/matplotlib

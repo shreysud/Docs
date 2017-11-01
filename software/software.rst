@@ -13,4 +13,5 @@ Software
    linux/index
    docs/index
    latex/index
+   C/index
    misc/index

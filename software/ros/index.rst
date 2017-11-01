@@ -2,11 +2,11 @@
 ====================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    ros
-   rviz
-   tf
    useful_resources
    useful_packages
+   examples
    my_ros
+   issues

@@ -1,17 +1,39 @@
 `Installing ROS <http://www.ros.org/install/>`_
-=================================================
-Then eventually, for my machine, `I followed <http://wiki.ros.org/kinetic/Installation/Ubuntu>`_
+***********************************************************
 
-where I choose:
+`From Pre-Built Debians <http://wiki.ros.org/kinetic/Installation/Ubuntu>`_
+----------------------------------------------------------------------------------
+
+For ROS kinetic:
 ::
 
   sudo apt-get install ros-kinetic-desktop-full
 
 
-`Installing from source <http://wiki.ros.org/Installation/Source>`_
-----------------------------------------------------------------------
+`From source <http://wiki.ros.org/Installation/Source>`_
+------------------------------------------------------------
+Additional steps/notes to the link above.
 
-I choose the second option (recommended one) for ``kinetic``
+1. Remove any sourced files from the ``bash.bashrc`` files.
+2. ``2.1``: after making the ``catkin_ws``
+  Run:
+  ::
+
+    catkin init
+
+  .. note:: make sure that there are no other external workspaces that you are building on
+
+3. Resolve Dependencies
+
+Before you build the ``catkin_ws`` make sure that you have the required dependencies!
+::
+
+  rosdep install --from-paths src --ignore-src --rosdistro kinetic -y
+
+Potential Issues:
+^^^^^^^^^^^^^^^^^^^^^^
+Using the second option (``Desktop Install``) for ``kinetic``, the following issues may occur:
+
 
 .. note::
 
@@ -30,34 +52,65 @@ I choose the second option (recommended one) for ``kinetic``
     potential error:
     ::
 
+      c++: error: /home/febbo/ros_catkin_ws/build_isolated/qt_gui_cpp/src/qt_gui_cpp_shiboken/libqt_gui_cpp_shiboken/qt_gui_cpp_recursivepluginprovider_wrapper.cpp: No such file or directory
+      c++: fatal error: no input files
+      compilation terminated.
+
       <== Failed to process package 'qt_gui_cpp':
 
+    Fix # 1
+    --------
     After posting an `issue here <https://github.com/ros-visualization/qt_gui_core/issues/105>`_. The fix was identified to be removing ``shiboken`` with:
     ::
 
       sudo apt-get remove libshiboken*
 
+    Fix # 2 (better)
+    -----------------
+    An issue with the above fix is that if you try updating your ros dependencies and it installs ``shiboken``. So, `installing Qt 5 <http://wiki.qt.io/Install_Qt_5_on_Ubuntu>`_ with:
+    ::
 
-gazebo_ros_pkgs
-^^^^^^^^^^^^^^^^^^^
-http://gazebosim.org/tutorials?tut=ros_installing&ver=1.9%2B&cat=connect_ros
-After installing ``ROS`` from `source <http://wiki.ros.org/Installation/Source>`_ with the Desktop Install you will also need to put the following into the ``/ros_catkin_ws/src`` folder:
+      sudo apt-get install qt5-default
+
+  .. note::
+
+    `potential error <https://github.com/ros-planning/navigation/issues/579>`:
+    ::
+
+      -- Found Bullet: /usr/lib/x86_64-linux-gnu/libBulletDynamics.so
+      CMake Error at /usr/share/cmake-3.5/Modules/FindPackageHandleStandardArgs.cmake:148 (message):
+        Could NOT find SDL (missing: SDL_LIBRARY SDL_INCLUDE_DIR)
+      Call Stack (most recent call first):
+
+
+.. note::
+
+  potential error
+  ::
+
+    CMake Error at /usr/local/lib/cmake/gazebo/gazebo-config.cmake:172 (find_package):
+    By not providing "Findignition-math3.cmake" in CMAKE_MODULE_PATH this
+
+`Installing missing Dependencies <http://wiki.ros.org/rosdep>`_
+=====================================================================
+
+.. note::
+
+    This is a truly magical command that works well (even when doing a source build)!!
+
+
+Go to the ``catkin_workspace`` and type:
 ::
 
-  git clone https://github.com/ros-perception/image_common -b hydro-devel
-  git clone https://github.com/ros-controls/control_toolbox -b kinetic-devel
-  git clone https://github.com/ros-controls/ros_control -b kinetic-devel
-  git clone https://github.com/ros-controls/realtime_tools -b kinetic-devel
-
-Then rebuild the workspace:
-::
-
-  ./src/catkin/bin/catkin_make_isolated --install
-
+  rosdep install --from-paths src --ignore-src -r -y
 
 Uninstalling ROS
 =================================================
-If you're running Ubuntu, and installed ROS with apt-get, the first step would be:
+
+From Pre-Built Debians:
+--------------------------
+
+If you're running Ubuntu, and installed ROS with ``apt-get``, the first step would be:
 ::
 
   sudo apt-get remove ros-*
@@ -73,60 +126,6 @@ Remove packages that are no longer required:
   sudo apt autoremove
 
 
-`Navigating the File System <http://wiki.ros.org/ROS/Tutorials/NavigatingTheFilesystem>`_
-=============================================================================================
-
-`Installing Packages <http://answers.ros.org/question/9201/how-do-i-install-a-missing-ros-package/>`_
-========================
-
-`URDF <http://wiki.ros.org/urdf>`_
-======
-Unified Robot Description Format (URDF), an Extensible Markup Language (XML) format (a markup language (can document revisions) that is both machine and human readable)
-
-Tutorials
-=========================
-
-  * `Node Tutorial Python <http://wiki.ros.org/ROSNodeTutorialPython>`_
-  * `Writing a Publisher Subscriber <http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber>`_
-  * `Publishing the State Info <http://wiki.ros.org/urdf/Tutorials/Using%20urdf%20with%20robot_state_publisher>`_
-  * `Navigation Tutorials <http://wiki.ros.org/navigation/Tutorials>`_
-  * `Turn your package into a python module <http://wiki.ros.org/rospy_tutorials/Tutorials/Makefile>`_
-  * http://duckietown.mit.edu/media/pdfs/1rpRisFoCYUm0XT78j-nAYidlh-cDtLCdEbIaBCnx9ew.pdf
-
-
-
-Other packages:
-::
-
-  sudo apt-get install libfcl-dev
-
-
-To check for any missing dependencies:
-::
-
-  rosdep check --from-paths . --ignore-src --rosdistro kinetic
-
-To automatically install missing dependencies:
-::
-
-  rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
-
-
-Potential Issues
-====================
-
-`permission denied: .gvfs <https://answers.ros.org/question/76896/permission-denied-gvfs/>`_
-------------------------------------------------------------------------------------------------
-Fix unmount Gnome virtual file system and delete the mounting point:
-::
-
-  sudo umount /home/febbo/.gvfs
-  sudo rm -rf .gvfs/
-
-
-
-Useful Questions
-====================
-
-  * `good path following code <https://answers.ros.org/question/234491/good-path-following-controller-for-ros/>`_
-  * https://github.com/osrf/homebrew-simulation/issues/167
+From Source
+-------------
+TODO

@@ -1,4 +1,4 @@
-hGazebo
+Gazebo
 *******
 
 
@@ -51,25 +51,26 @@ sudo hg clone https://bitbucket.org/osrf/gazebo /tmp/gazebo -b gazebo7
 
 * Step 3:
 
-  Type:
+  Configure Gazebo:
   ::
 
-    /opt/gazebo$ sudo cmake CMakeLists.txt
+    sudo mkdir build
+    cd build
+    sudo cmake ../
 
-* Step 7:
-
-  Then using `checkinstall <https://help.ubuntu.com/community/CheckInstall>`_. Type:
+  Build Gazebo:
   ::
 
-    sudo checkinstall
+    /opt/gazebo/build$ sudo make -j4
 
-
-  Then you can remove it from your system anytime using:
+  Install Gazebo:
   ::
 
-    dpkg -r build
+    sudo make install
 
-  In the `/opt/gazebo/build` directory.
+* Step 4:
+
+  Set up environmental variables and
 
 From source (option B) -preferred for ``Gazebo-7``
 ---------------------------------------------------
@@ -78,28 +79,37 @@ http://gazebosim.org/tutorials?tut=install_dependencies_from_source
 
 Potential Issue
 ^^^^^^^^^^^^^^^^^^^^^
-If not sourced preperly:
-::
+.. note::
 
-  febbo@febbo-HP-ZBook-17-G2:~$ gazebo
-  gazebo: error while loading shared libraries: libgazebo_common.so.7: cannot open shared object file: No such file or directory
+    If not sourced properly:
+    ::
 
-Then try:
-::
+      febbo@febbo-HP-ZBook-17-G2:~$ gazebo
+      gazebo: error while loading shared libraries: libgazebo_common.so.7: cannot open shared object file: No such file or directory
 
-  febbo@febbo-HP-ZBook-17-G2:~$ find / -name 'libgazebo_common.so.7' 2>/dev/null
-  /usr/local/lib/libgazebo_common.so.7
-  /tmp/gazebo/build/gazebo/common/libgazebo_common.so.7
+    Then try:
+    ::
 
-And updated the ``/etc/bash.bashrc`` file appropriately:
-::
+      febbo@febbo-HP-ZBook-17-G2:~$ find / -name 'libgazebo_common.so.7' 2>/dev/null
+      /usr/local/lib/libgazebo_common.so.7
+      /tmp/gazebo/build/gazebo/common/libgazebo_common.so.7
 
-  gksu gedit /etc/bash.bashrc
+    And updated the ``/etc/bash.bashrc`` file appropriately:
+    ::
 
-By adding (in this case):
-::
+      gksu gedit /etc/bash.bashrc
 
-  export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+    By adding (in this case):
+    ::
+
+      export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
+.. note::
+
+  when trying to start Gazebo from the command line:
+  ::
+
+  gazebo: error while loading shared libraries: libsdformat.so.5: cannot open shared object file: No such file or directory
 
 Terminology
 ============

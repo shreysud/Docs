@@ -85,6 +85,7 @@ Try updating ``glib`` with:
 
 
 
+
 Issues:
 ===========
 
@@ -93,7 +94,21 @@ Issues:
   * https://stackoverflow.com/questions/13978692/strcpy-sse2-unaligned-s-not-found
   * https://sourceforge.net/p/irrlicht/bugs/375/
 
+compiler cannot find Chrono header files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Issue might look something like:
+::
 
+  /build$ ninja
+  [1/2] Building CXX object demo_Steerin....dir/demo_VEH_SteeringController.cpp.o
+  FAILED: /usr/bin/c++      -MMD -MT demo_SteeringController/CMakeFiles/demo_SteeringController.dir/demo_VEH_SteeringController.cpp.o -MF demo_SteeringController/CMakeFiles/demo_SteeringController.dir/demo_VEH_SteeringController.cpp.o.d -o demo_SteeringController/CMakeFiles/demo_SteeringController.dir/demo_VEH_SteeringController.cpp.o -c /home/febbo/Documents/workspace/tutorials/chrono_tutorials/source/demo_SteeringController/demo_VEH_SteeringController.cpp
+  /home/febbo/Documents/workspace/tutorials/chrono_tutorials/source/demo_SteeringController/demo_VEH_SteeringController.cpp:22:37: fatal error: chrono/core/ChFileutils.h: No such file or directory
+  compilation terminated.
+  ninja: build stopped: subcommand failed.
+
+https://github.com/projectchrono/chrono/issues/79
+
+In this case, copy the
 Resources
 ==========
 
