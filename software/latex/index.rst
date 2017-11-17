@@ -6,3 +6,4 @@
    install
    beamer
    software
+   plotting

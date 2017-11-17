@@ -25,3 +25,9 @@ Potential Vehicle Models
   * http://wiki.ros.org/Robots/Husky
   * http://wiki.ros.org/Robots/Grizzly
   * http://wiki.ros.org/Robots/Jackal
+
+
+NVIDIA's Driveworks
+======================
+
+https://developer.nvidia.com/driveworks

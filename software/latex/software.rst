@@ -1,8 +1,8 @@
 Software Tools
-================
+####################
 
 Texmaker
------------
+============
 
 A useful program to use LaTeX on Ubuntu.
 
@@ -16,6 +16,13 @@ Then, the above option did not work and this worked:
 
 .. image:: build2.png
 
+To insert ``.svg`` files automatically
+----------------------------------------
+
+Useful links:
+
+ * `svg package <https://tex.stackexchange.com/questions/194148/how-to-make-latex-automatically-call-inkscape-to-export-figure-to-pdf-tex>`_
+ * `shell-escape command <https://tex.stackexchange.com/questions/99475/how-to-invoke-latex-with-the-shell-escape-flag-in-texmakerx/99476#99476>`_
 
 Convert SVG to PDF
 ---------------------

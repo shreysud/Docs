@@ -11,3 +11,4 @@ Contents:
 
    software/software
    hardware/index
+   notes/index

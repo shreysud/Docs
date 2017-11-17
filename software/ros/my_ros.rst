@@ -34,6 +34,20 @@ as of 8/22/2017 on top of ros-kinetic-full:
   sudo apt-get install ros-kinetic-joint-limits-interface
   sudo apt-get install ros-kinetic-map-server
   sudo apt-get install ros-kinetic-robot-state-publisher
+  sudo apt install ros-kinetic-rqt
+
+To use `Autoware <https://github.com/CPFL/Autoware>`_
+-------------------------------------------------------
+added:
+::
+  sudo apt-get install ros-kinetic-nmea-msgs ros-kinetic-nmea-navsat-driver ros-kinetic-sound-play ros-kinetic-jsk-visualization ros-kinetic-grid-map ros-kinetic-gps-common
+  sudo apt-get install ros-kinetic-controller-manager ros-kinetic-ros-control ros-kinetic-ros-controllers ros-kinetic-gazebo-ros-control ros-kinetic-joystick-drivers
+  sudo apt-get install libnlopt-dev freeglut3-dev qtbase5-dev libqt5opengl5-dev libssh2-1-dev libarmadillo-dev libpcap-dev gksu libgl1-mesa-dev libglew-dev python-wxgtk3.0
+
+
+  sudo apt install ros-kinetic-roslint
+  sudo apt-get install ros-kinetic-joint-state-publisher
+  sudo apt-get install ros-kinetic-controller-manager
 
 
 my ``.bashrc``
