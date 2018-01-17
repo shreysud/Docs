@@ -17,7 +17,7 @@ Gazebo 8 and ROS kinetic (preferred)
 remove all Gazebo and ros binaries:
 ::
 
-  sudo apt-get remove '.*gazebo.*' '.*sdformat.*' '.*ignition-math.*' '.*ignition-msgs.*' '.*ignition-transport.*'
+  sudo apt-get remove --purge '.*gazebo.*' '.*sdformat.*' '.*ignition-math.*' '.*ignition-msgs.*' '.*ignition-transport.*'
   sudo apt-get remove ros-*
   sudo apt-get purge ros-*
   sudo apt autoremove
@@ -37,9 +37,12 @@ install dependencies:
 Get gazebo and ROS binaries:
 ::
 
-  sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+  sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+  sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+  sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
   wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
   sudo apt-get update
+  sudo apt-get install ros-kinetic-ros-base
   sudo apt-get install -y gazebo8
   sudo apt-get install -y ros-kinetic-gazebo8-ros-pkgs
   sudo apt-get install -y ros-kinetic-fake-localization
