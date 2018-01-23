@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>VPL-16 Setup (for Ubuntu 16.04) &mdash; PhD Notes 0.0.1-rc1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="PhD Notes 0.0.1-rc1 documentation" href="../index.html"/>
+        <link rel="up" title="LiDAR Devices" href="lidar.html"/>
+        <link rel="next" title="Huck’s notes" href="../notes/index.html"/>
+        <link rel="prev" title="LiDAR Devices" href="lidar.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PhD Notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../software/software.html">Software</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Hardware</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="lidar.html">LiDAR Devices</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="lidar.html#velodyne-puck-16">Velodyne Puck 16</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">VPL-16 Setup (for Ubuntu 16.04)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lidar.html#id1">SLAMTEC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../notes/index.html">Huck&#8217;s notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PhD Notes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Hardware</a> &raquo;</li>
+        
+          <li><a href="lidar.html">LiDAR Devices</a> &raquo;</li>
+        
+      <li>VPL-16 Setup (for Ubuntu 16.04)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/hardware/puck_setup.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="vpl-16-setup-for-ubuntu-16-04">
+<h1>VPL-16 Setup (for Ubuntu 16.04)<a class="headerlink" href="#vpl-16-setup-for-ubuntu-16-04" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="getting-on-the-lidar-on-the-network">
+<h2>Getting on the LiDAR on the Network<a class="headerlink" href="#getting-on-the-lidar-on-the-network" title="Permalink to this headline">¶</a></h2>
+<p>The basic tutorial is <a class="reference external" href="http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20HDL-32E">here</a>, but you may run into issues like I did. In which case, the following notes may be useful.</p>
+<p>First go to: Network -&gt; Options...</p>
+<div class="section" id="ethernet-settings">
+<h3>Ethernet Settings<a class="headerlink" href="#ethernet-settings" title="Permalink to this headline">¶</a></h3>
+<p>Type the LiDAR&#8217;s cloned MAC address in the box.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>To find the cloned MAC address for the LiDAR; look at the bottom of the device. For me it is:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="mi">60</span><span class="p">:</span><span class="mi">76</span><span class="p">:</span><span class="mi">88</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="n">F9</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you are trying to get the Internet back delete the MAC address in the box.</p>
+</div>
+</div>
+<div class="section" id="ipv4-settings">
+<h3>IPv4 Settings<a class="headerlink" href="#ipv4-settings" title="Permalink to this headline">¶</a></h3>
+<p>To show all devices found:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ifconfig</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+<p>Which gives something like:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>febbo@febbo-HP-Z220-SFF-Workstation:~/Documents/workspace/Docs$ ifconfig -a
+eno1      Link encap:Ethernet  HWaddr b4:b5:2f:a9:52:61
+          inet addr:192.168.1.200  Bcast:0.0.0.0  Mask:255.255.255.255
+          inet6 addr: fe80::b6b5:2fff:fea9:5261/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1604067 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:22232 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:1722487876 (1.7 GB)  TX bytes:2422647 (2.4 MB)
+          Interrupt:20 Memory:f7100000-f7120000
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:89494 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:89494 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1
+          RX bytes:145501992 (145.5 MB)  TX bytes:145501992 (145.5 MB)
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Note that the device is <code class="docutils literal"><span class="pre">eno1</span></code>, not <code class="docutils literal"><span class="pre">eth0</span></code>!</p>
+</div>
+<p>Then do:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">ifconfig</span> <span class="n">eno1</span> <span class="n">up</span>
+<span class="n">sudo</span> <span class="n">ip</span> <span class="n">addr</span> <span class="n">add</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.200</span> <span class="n">dev</span> <span class="n">eno1</span>
+<span class="n">sudo</span> <span class="n">route</span> <span class="n">add</span> <span class="o">-</span><span class="n">net</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.0</span> <span class="n">netmask</span> <span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span> <span class="n">dev</span> <span class="n">eno1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="testing-the-lidar">
+<h2>Testing the LiDAR<a class="headerlink" href="#testing-the-lidar" title="Permalink to this headline">¶</a></h2>
+<p>First clone the Velodyne LiDAR ros package into a <code class="docutils literal"><span class="pre">catkin_ws</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">wiki</span><span class="o">.</span><span class="n">ros</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">velodyne</span>
+</pre></div>
+</div>
+<p>To run it:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">roslaunch</span> <span class="n">velodyne_pointcloud</span> <span class="n">VLP16_points</span><span class="o">.</span><span class="n">launch</span>
+</pre></div>
+</div>
+<p>To view data run:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rosrun</span> <span class="n">rviz</span> <span class="n">rviz</span> <span class="o">-</span><span class="n">f</span> <span class="n">velodyne</span>
+</pre></div>
+</div>
+<p>Then add try adding <code class="docutils literal"><span class="pre">LaserScan</span></code> and <code class="docutils literal"><span class="pre">PointCloud2</span></code> and their topics <code class="docutils literal"><span class="pre">/velodyne_points</span></code> and <code class="docutils literal"><span class="pre">/scan</span></code>, respectively.</p>
+<p>If you have trouble <a class="reference external" href="http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20HDL-32E">these instructions</a> will help you display the data in rviz.</p>
+</div>
+<div class="section" id="getting-on-the-computer-back-on-the-internet">
+<h2>Getting on the Computer back on the Internet<a class="headerlink" href="#getting-on-the-computer-back-on-the-internet" title="Permalink to this headline">¶</a></h2>
+<p>On the top right of your screen highlight the <code class="docutils literal"><span class="pre">Network</span></code> icon and click <code class="docutils literal"><span class="pre">Edit</span> <span class="pre">Connections</span></code>. Then click <code class="docutils literal"><span class="pre">Add</span></code> add back the Internet with the following steps.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Make sure that you name the <code class="docutils literal"><span class="pre">LiDAR</span></code> connection and the <code class="docutils literal"><span class="pre">Internet</span></code> connection.</p>
+</div>
+<p>First go to: Network -&gt; Options...</p>
+<div class="section" id="id1">
+<h3>Ethernet Settings<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are trying to get the Internet back delete the MAC address in the box.</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>IPv4 Settings<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you are trying to get the Internet back, select the <code class="docutils literal"><span class="pre">Method</span></code> to be:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">Automatic</span> <span class="p">(</span><span class="n">DHCP</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="misc-old-devel">
+<h2>Misc / OLD / Devel<a class="headerlink" href="#misc-old-devel" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>IPv4 Settings<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>To add the LiDAR, select the <code class="docutils literal"><span class="pre">Method</span></code> to be <code class="docutils literal"><span class="pre">Manual</span></code>, then select <code class="docutils literal"><span class="pre">Add</span></code> and add the IP address.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>To get the IP address of the LiDAR, there are several options, but</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">ifconfig</span>
+</pre></div>
+</div>
+</div>
+<p>May be able to follow <a class="reference external" href="https://askubuntu.com/questions/628383/output-only-mac-address-on-ubuntu">this post</a> and type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ifconfig</span> <span class="o">-</span><span class="n">a</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">Po</span> <span class="s1">&#39;HWaddr \K.*$&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../notes/index.html" class="btn btn-neutral float-right" title="Huck’s notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lidar.html" class="btn btn-neutral" title="LiDAR Devices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Huckleberry Febbo.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1-rc1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installing ROS &mdash; PhD Notes 0.0.1-rc1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="PhD Notes 0.0.1-rc1 documentation" href="../../index.html"/>
+        <link rel="up" title="ROS" href="index.html"/>
+        <link rel="next" title="Resources and Tutorials" href="useful_resources.html"/>
+        <link rel="prev" title="ROS" href="index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PhD Notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../software.html">Software</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">ROS</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Installing ROS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">From Pre-Built Debians</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">From source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">From Pre-Built Debians:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">From Source</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="useful_resources.html">Resources and Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="useful_packages.html">Useful ROS Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples.html">Useful Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="my_ros.html">My Personal Build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="issues.html">Potential Errors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gazebo/index.html">Gazebo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ros_gazebo/index.html">ROS and Gazebo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chrono/index.html">Project Chrono</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polysync/index.html">Polysync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../julia/index.html">julia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linux/index.html">linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../C/index.html">Including files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/index.html">misc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/index.html">Huck&#8217;s notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PhD Notes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../software.html">Software</a> &raquo;</li>
+        
+          <li><a href="index.html">ROS</a> &raquo;</li>
+        
+      <li>Installing ROS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/software/ros/ros.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><a class="reference external" href="http://www.ros.org/install/">Installing ROS</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2><a class="reference external" href="http://wiki.ros.org/kinetic/Installation/Ubuntu">From Pre-Built Debians</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>For ROS kinetic:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">desktop</span><span class="o">-</span><span class="n">full</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><a class="reference external" href="http://wiki.ros.org/Installation/Source">From source</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Additional steps/notes to the link above.</p>
+<ol class="arabic simple">
+<li>Remove any sourced files from the <code class="docutils literal"><span class="pre">bash.bashrc</span></code> files.</li>
+<li><code class="docutils literal"><span class="pre">2.1</span></code>: after making the <code class="docutils literal"><span class="pre">catkin_ws</span></code></li>
+</ol>
+<blockquote>
+<div><p>Run:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">catkin</span> <span class="n">init</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">make sure that there are no other external workspaces that you are building on</p>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Resolve Dependencies</li>
+</ol>
+<p>Before you build the <code class="docutils literal"><span class="pre">catkin_ws</span></code> make sure that you have the required dependencies!</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rosdep</span> <span class="n">install</span> <span class="o">--</span><span class="n">from</span><span class="o">-</span><span class="n">paths</span> <span class="n">src</span> <span class="o">--</span><span class="n">ignore</span><span class="o">-</span><span class="n">src</span> <span class="o">--</span><span class="n">rosdistro</span> <span class="n">kinetic</span> <span class="o">-</span><span class="n">y</span>
+</pre></div>
+</div>
+<div class="section" id="potential-issues">
+<h3>Potential Issues:<a class="headerlink" href="#potential-issues" title="Permalink to this headline">¶</a></h3>
+<p>Using the second option (<code class="docutils literal"><span class="pre">Desktop</span> <span class="pre">Install</span></code>) for <code class="docutils literal"><span class="pre">kinetic</span></code>, the following issues may occur:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>potential error:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">febbo</span><span class="o">/</span><span class="n">ros_catkin_ws</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">opencv3</span><span class="o">/</span><span class="n">opencv_contrib</span><span class="o">/</span><span class="n">rgbd</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">odometry</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span> <span class="n">fatal</span> <span class="n">error</span><span class="p">:</span> <span class="n">unsupported</span><span class="o">/</span><span class="n">Eigen</span><span class="o">/</span><span class="n">MatrixFunctions</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span> <span class="n">compilation</span> <span class="n">terminated</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>The fix is to changed line 41 in <code class="docutils literal"><span class="pre">odometry.cpp</span></code> to (or where <code class="docutils literal"><span class="pre">eigen3</span></code> is):</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="c1">#include &lt;eigen3/unsupported/Eigen/MatrixFunctions&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<blockquote>
+<div><p>potential error:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">++</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">febbo</span><span class="o">/</span><span class="n">ros_catkin_ws</span><span class="o">/</span><span class="n">build_isolated</span><span class="o">/</span><span class="n">qt_gui_cpp</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">qt_gui_cpp_shiboken</span><span class="o">/</span><span class="n">libqt_gui_cpp_shiboken</span><span class="o">/</span><span class="n">qt_gui_cpp_recursivepluginprovider_wrapper</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span>
+<span class="n">c</span><span class="o">++</span><span class="p">:</span> <span class="n">fatal</span> <span class="n">error</span><span class="p">:</span> <span class="n">no</span> <span class="nb">input</span> <span class="n">files</span>
+<span class="n">compilation</span> <span class="n">terminated</span><span class="o">.</span>
+
+<span class="o">&lt;==</span> <span class="n">Failed</span> <span class="n">to</span> <span class="n">process</span> <span class="n">package</span> <span class="s1">&#39;qt_gui_cpp&#39;</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>After posting an <a class="reference external" href="https://github.com/ros-visualization/qt_gui_core/issues/105">issue here</a>. The fix was identified to be removing <code class="docutils literal"><span class="pre">shiboken</span></code> with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">remove</span> <span class="n">libshiboken</span><span class="o">*</span>
+</pre></div>
+</div>
+<p>An issue with the above fix is that if you try updating your ros dependencies and it installs <code class="docutils literal"><span class="pre">shiboken</span></code>. So, <a class="reference external" href="http://wiki.qt.io/Install_Qt_5_on_Ubuntu">installing Qt 5</a> with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">qt5</span><span class="o">-</span><span class="n">default</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p><cite>potential error &lt;https://github.com/ros-planning/navigation/issues/579&gt;</cite>:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="o">--</span> <span class="n">Found</span> <span class="n">Bullet</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">/</span><span class="n">libBulletDynamics</span><span class="o">.</span><span class="n">so</span>
+<span class="n">CMake</span> <span class="n">Error</span> <span class="n">at</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">cmake</span><span class="o">-</span><span class="mf">3.5</span><span class="o">/</span><span class="n">Modules</span><span class="o">/</span><span class="n">FindPackageHandleStandardArgs</span><span class="o">.</span><span class="n">cmake</span><span class="p">:</span><span class="mi">148</span> <span class="p">(</span><span class="n">message</span><span class="p">):</span>
+  <span class="n">Could</span> <span class="n">NOT</span> <span class="n">find</span> <span class="n">SDL</span> <span class="p">(</span><span class="n">missing</span><span class="p">:</span> <span class="n">SDL_LIBRARY</span> <span class="n">SDL_INCLUDE_DIR</span><span class="p">)</span>
+<span class="n">Call</span> <span class="n">Stack</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">first</span><span class="p">):</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>potential error</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">CMake</span> <span class="n">Error</span> <span class="n">at</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">cmake</span><span class="o">/</span><span class="n">gazebo</span><span class="o">/</span><span class="n">gazebo</span><span class="o">-</span><span class="n">config</span><span class="o">.</span><span class="n">cmake</span><span class="p">:</span><span class="mi">172</span> <span class="p">(</span><span class="n">find_package</span><span class="p">):</span>
+<span class="n">By</span> <span class="ow">not</span> <span class="n">providing</span> <span class="s2">&quot;Findignition-math3.cmake&quot;</span> <span class="ow">in</span> <span class="n">CMAKE_MODULE_PATH</span> <span class="n">this</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h4><a class="reference external" href="http://wiki.ros.org/rosdep">Installing missing Dependencies</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is a truly magical command that works well (even when doing a source build)!!</p>
+</div>
+<p>Go to the <code class="docutils literal"><span class="pre">catkin_workspace</span></code> and type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rosdep</span> <span class="n">install</span> <span class="o">--</span><span class="n">from</span><span class="o">-</span><span class="n">paths</span> <span class="n">src</span> <span class="o">--</span><span class="n">ignore</span><span class="o">-</span><span class="n">src</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span><span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="uninstalling-ros">
+<h4>Uninstalling ROS<a class="headerlink" href="#uninstalling-ros" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>From Pre-Built Debians:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>If you&#8217;re running Ubuntu, and installed ROS with <code class="docutils literal"><span class="pre">apt-get</span></code>, the first step would be:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">remove</span> <span class="n">ros</span><span class="o">-*</span>
+</pre></div>
+</div>
+<p>Remove configuration files:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">purge</span> <span class="n">ros</span><span class="o">-*</span>
+</pre></div>
+</div>
+<p>Remove packages that are no longer required:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">autoremove</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>From Source<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="useful_resources.html" class="btn btn-neutral float-right" title="Resources and Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="ROS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Huckleberry Febbo.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.1-rc1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

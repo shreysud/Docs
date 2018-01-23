@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tf2 &mdash; PhD Notes 0.0.1-rc1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="PhD Notes 0.0.1-rc1 documentation" href="../../index.html"/>
+        <link rel="up" title="Useful ROS Packages" href="useful_packages.html"/>
+        <link rel="next" title="RViz" href="rviz.html"/>
+        <link rel="prev" title="Useful ROS Packages" href="useful_packages.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PhD Notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../software.html">Software</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">ROS</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ros.html">Installing ROS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="useful_resources.html">Resources and Tutorials</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="useful_packages.html">Useful ROS Packages</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">tf2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rviz.html">RViz</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html">Eigen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id2">roscpp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id3">rospy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id4">Common Messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id5">message_filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id6">PCL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id7">Ackermann Group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id8">navigation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id9">hector_localization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id10">ros_control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id11">pointcloud_to_laserscan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id12">teleop_twist_keyboard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id13">Cartographer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id14">laser_pipeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id15">robot_localization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#robot-state-publisher">robot_state_publisher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id16">clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id17">ControllIt!</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id18">MoveIT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id20">URDF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id21">catkin-tools</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="examples.html">Useful Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="my_ros.html">My Personal Build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="issues.html">Potential Errors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gazebo/index.html">Gazebo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ros_gazebo/index.html">ROS and Gazebo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chrono/index.html">Project Chrono</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polysync/index.html">Polysync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../julia/index.html">julia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linux/index.html">linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../C/index.html">Including files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/index.html">misc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/index.html">Huck&#8217;s notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PhD Notes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../software.html">Software</a> &raquo;</li>
+        
+          <li><a href="index.html">ROS</a> &raquo;</li>
+        
+          <li><a href="useful_packages.html">Useful ROS Packages</a> &raquo;</li>
+        
+      <li>tf2</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/software/ros/tf.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><a class="reference external" href="http://docs.ros.org/lunar/api/tf2/html/">tf2</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>This package uses <a class="reference external" href="http://wiki.ros.org/geometry_msgs">geometry_msgs</a> for some of the messages.</p>
+<div class="section" id="useful-functions">
+<h2>Useful <a class="reference external" href="http://docs.ros.org/lunar/api/tf2/html/functions_func.html">functions</a><a class="headerlink" href="#useful-functions" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">use tf2 not tf</p>
+</div>
+</div>
+<div class="section" id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<p>Check tf tree:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">roswtf</span>
+<span class="n">rosrun</span> <span class="n">tf</span> <span class="n">tf_monitor</span>
+<span class="n">rosrun</span> <span class="n">tf</span> <span class="n">view_frames</span>
+</pre></div>
+</div>
+<p>to print a particular transformation:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rosrun</span> <span class="n">tf</span> <span class="n">tf_echo</span> <span class="o">/</span><span class="nb">map</span> <span class="o">/</span><span class="n">odom</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="joint-states">
+<h2>Joint States<a class="headerlink" href="#joint-states" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="terminology">
+<h2>Terminology<a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Quaternions: a way to describe rotations that does not have singularities. It has four numbers, the first three describe an axis and the third is the amount of rotation about that axis.</li>
+</ol>
+<dl class="docutils">
+<dt>The first three components are imaginary:</dt>
+<dd><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="n">q</span><span class="o">=</span><span class="n">xi</span><span class="o">+</span><span class="n">yj</span><span class="o">+</span><span class="n">zk</span><span class="o">+</span><span class="n">w</span>
+</pre></div>
+</div>
+</dd>
+<dt>The magnitude of a quaternion is:</dt>
+<dd><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="n">magnitude</span><span class="o">=</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="n">z</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">w</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt>where:</dt>
+<dd><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="n">magnitude</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">/</span> <span class="n">magnitude</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">z</span> <span class="o">/</span> <span class="n">magnitude</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">w</span> <span class="o">/</span> <span class="n">magnitude</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p><a class="reference external" href="http://www.euclideanspace.com/maths/geometry/rotations/conversions/quaternionToEuler/">http://www.euclideanspace.com/maths/geometry/rotations/conversions/quaternionToEuler/</a></p>
+<ul class="simple">
+<li>Almost never have to set these manually in ROS!</li>
+<li><a class="reference external" href="http://www.cprogramming.com/tutorial/3d/quaternions.html">Programming Quaternions</a></li>
+<li>` a calculator &lt;<a class="reference external" href="http://quat.zachbennett.com/">http://quat.zachbennett.com/</a>&gt;`_</li>
+<li>` a Gazebo example &lt;<a class="reference external" href="http://gazebosim.org/tutorials?tut=drcsim_atlas_siminterface&amp;cat=">http://gazebosim.org/tutorials?tut=drcsim_atlas_siminterface&amp;cat=</a>&gt;`_</li>
+</ul>
+</div>
+<div class="section" id="tutorials-and-resources">
+<h2>Tutorials and Resources<a class="headerlink" href="#tutorials-and-resources" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://wiki.ros.org/tf/Tutorials">tutorials</a></li>
+<li><a class="reference external" href="http://wiki.ros.org/tf/FAQ">FAQ</a></li>
+<li><a class="reference external" href="https://w3.cs.jmu.edu/spragunr/CS354_S14/labs/tf_lab/html/tf-module.html">docs</a></li>
+<li><a class="reference external" href="http://wiki.ros.org/hector_slam/Tutorials/SettingUpForYourRobot">setting up the frames</a>: for SLAM</li>
+<li><a class="reference external" href="http://wiki.ros.org/navigation/Tutorials/RobotSetup/TF">setting up your robot using tf</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="example-resources">
+<h2>Example Resources<a class="headerlink" href="#example-resources" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>python <a class="reference external" href="https://github.com/mars-uoit/omnimaxbot/blob/master/omnimaxbot_description/src/tf_broadcaster.cpp">omniaxbot</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="issues">
+<h2>Issues<a class="headerlink" href="#issues" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://answers.ros.org/question/55923/tfquaternion-syntax-question/">quaternions</a></li>
+<li><a class="reference external" href="http://answers.ros.org/question/87726/applying-rotations-to-coordinate-frames-using-tf/">using tf</a></li>
+<li><a class="reference external" href="http://answers.gazebosim.org/question/4205/joint_state-ros-topic-from-gazebo-and-ros_control/">joint states</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="potential-errors">
+<h2>Potential Errors<a class="headerlink" href="#potential-errors" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>potential error:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">fatal</span> <span class="n">error</span><span class="p">:</span> <span class="n">tf</span><span class="o">/</span><span class="n">transform_broadcaster</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span>
+<span class="n">compilation</span> <span class="n">terminated</span><span class="o">.</span>
+</pre></div>
+</div>
+<p class="last">Use tf2! The new version of tf.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rviz.html" class="btn btn-neutral float-right" title="RViz" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="useful_packages.html" class="btn btn-neutral" title="Useful ROS Packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Huckleberry Febbo.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.1-rc1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

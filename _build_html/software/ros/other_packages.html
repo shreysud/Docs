@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Eigen &mdash; PhD Notes 0.0.1-rc1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="PhD Notes 0.0.1-rc1 documentation" href="../../index.html"/>
+        <link rel="up" title="Useful ROS Packages" href="useful_packages.html"/>
+        <link rel="next" title="Useful Examples" href="examples.html"/>
+        <link rel="prev" title="RViz" href="rviz.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PhD Notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../software.html">Software</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">ROS</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ros.html">Installing ROS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="useful_resources.html">Resources and Tutorials</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="useful_packages.html">Useful ROS Packages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="tf.html">tf2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rviz.html">RViz</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Eigen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">roscpp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">rospy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Common Messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">message_filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">PCL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">Ackermann Group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">navigation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">hector_localization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">ros_control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">pointcloud_to_laserscan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">teleop_twist_keyboard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">Cartographer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">laser_pipeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">robot_localization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#robot-state-publisher">robot_state_publisher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">ControllIt!</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18">MoveIT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">URDF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id21">catkin-tools</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="examples.html">Useful Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="my_ros.html">My Personal Build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="issues.html">Potential Errors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gazebo/index.html">Gazebo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ros_gazebo/index.html">ROS and Gazebo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chrono/index.html">Project Chrono</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polysync/index.html">Polysync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../julia/index.html">julia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linux/index.html">linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../C/index.html">Including files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/index.html">misc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/index.html">Huck&#8217;s notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PhD Notes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../software.html">Software</a> &raquo;</li>
+        
+          <li><a href="index.html">ROS</a> &raquo;</li>
+        
+          <li><a href="useful_packages.html">Useful ROS Packages</a> &raquo;</li>
+        
+      <li>Eigen</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/software/ros/other_packages.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><a class="reference external" href="http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>a C++ library that I use for quaternion transformations, to <a class="reference external" href="http://eigen.tuxfamily.org/dox/GettingStarted.html">get started</a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">when going to use it <a class="reference external" href="http://wiki.ros.org/eigen">with ROS</a> there is no FindEigen.cmake on Ubuntu, so you need to include it in your package by default.</p>
+</div>
+<p><a class="reference external" href="http://wiki.ros.org/jade/Migration#Eigen_CMake_Module_in_cmake_modules">http://wiki.ros.org/jade/Migration#Eigen_CMake_Module_in_cmake_modules</a></p>
+</div>
+<div class="section" id="id2">
+<h1><a class="reference external" href="http://wiki.ros.org/roscpp_tutorials">roscpp</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<p>A C++ implementation of ROS that allows users to quickly interact with ROS.</p>
+</div>
+<div class="section" id="id3">
+<h1><a class="reference external" href="http://wiki.ros.org/rospy/Overview">rospy</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="id4">
+<h1><a class="reference external" href="http://wiki.ros.org/common_msgs">Common Messages</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h1>
+<p>a meta package for common messages</p>
+</div>
+<div class="section" id="id5">
+<h1><a class="reference external" href="http://wiki.ros.org/message_filters">message_filters</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h1>
+<p>Make the decision to use data based off of the time stamp. Basically sequence the data</p>
+</div>
+<div class="section" id="id6">
+<h1><a class="reference external" href="http://wiki.ros.org/pcl/Tutorials">PCL</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h1>
+<p>Point cloud library</p>
+</div>
+<div class="section" id="id7">
+<h1><a class="reference external" href="http://wiki.ros.org/Ackermann%20Group">Ackermann Group</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h1>
+<p>Group that supports Ackermann steering geometry.</p>
+</div>
+<div class="section" id="id8">
+<h1><a class="reference external" href="http://wiki.ros.org/navigation">navigation</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h1>
+<p>install with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">navigation</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h1><a class="reference external" href="http://wiki.ros.org/hector_localization?distro=kinetic">hector_localization</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h1>
+<p>install with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">hector</span><span class="o">-</span><span class="n">localization</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h1><a class="reference external" href="http://wiki.ros.org/ros_control">ros_control</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h1>
+<p>install with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">ros</span><span class="o">-</span><span class="n">control</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">ros</span><span class="o">-</span><span class="n">controllers</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h1><a class="reference external" href="http://wiki.ros.org/pointcloud_to_laserscan">pointcloud_to_laserscan</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h1>
+<p>install with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">pointcloud</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">laserscan</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h1><a class="reference external" href="http://wiki.ros.org/teleop_twist_keyboard">teleop_twist_keyboard</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="id13">
+<h1><a class="reference external" href="https://opensource.googleblog.com/2016/10/introducing-cartographer.html">Cartographer</a><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h1>
+<p>A Google map builder</p>
+</div>
+<div class="section" id="id14">
+<h1><a class="reference external" href="http://wiki.ros.org/laser_pipeline">laser_pipeline</a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h1>
+<p>Meta-package for laser data processing</p>
+</div>
+<div class="section" id="id15">
+<h1><a class="reference external" href="http://wiki.ros.org/robot_localization">robot_localization</a><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h1>
+<p>Provide state estimates given sensor data</p>
+</div>
+<div class="section" id="robot-state-publisher">
+<h1>robot_state_publisher<a class="headerlink" href="#robot-state-publisher" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://wiki.ros.org/robot_state_publisher/Tutorials/Using%20the%20robot%20state%20publisher%20on%20your%20own%20robot">turorial</a></li>
+<li>load <a class="reference external" href="http://answers.ros.org/question/61479/adding-robot_description-to-parameter-server/">new parameters on the server</a></li>
+<li><a class="reference external" href="http://wiki.ros.org/robot_state_publisher/Troubleshooting">Troubleshooting</a></li>
+<li><a class="reference external" href="http://answers.ros.org/question/12083/messages-being-blocked-from-publishing/">messages being blocked</a></li>
+<li><a class="reference external" href="http://wiki.ros.org/rviz/Troubleshooting">use_sim_time</a> = <code class="docutils literal"><span class="pre">false</span></code></li>
+</ul>
+</div></blockquote>
+<p>Requires:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://wiki.ros.org/joint_state_publisher">joint_state_publisher</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id16">
+<h1><a class="reference external" href="http://wiki.ros.org/Clock">clock</a><a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h1>
+<p>For a ROS node to use the <code class="docutils literal"><span class="pre">/clock</span></code> topic set the <code class="docutils literal"><span class="pre">/use_sim_time</span></code> parameter before node is started</p>
+</div>
+<div class="section" id="id17">
+<h1><a class="reference external" href="http://robotcontrolit.com/installation">ControllIt!</a><a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="id18">
+<h1><a class="reference external" href="http://moveit.ros.org/">MoveIT</a><a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id19">
+<h2><a class="reference external" href="http://moveit.ros.org/install/">Install</a><a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<p>ROS Kinetic on Ubuntu:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ros</span><span class="o">-</span><span class="n">kinetic</span><span class="o">-</span><span class="n">moveit</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-with-kinetic">
+<h2>Using With Kinetic<a class="headerlink" href="#using-with-kinetic" title="Permalink to this headline">¶</a></h2>
+<p>Go to <a class="reference external" href="https://github.com/ros-planning/moveit_tutorials/pull/45">this link</a> and download the PDF for instructions.</p>
+</div>
+</div>
+<div class="section" id="id20">
+<h1><a class="reference external" href="http://wiki.ros.org/urdf">URDF</a><a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h1>
+<p>Unified Robot Description Format (URDF), an Extensible Markup Language (XML) format (a markup language (can document revisions) that is both machine and human readable)</p>
+</div>
+<div class="section" id="id21">
+<h1><a class="reference external" href="http://catkin-tools.readthedocs.io/en/latest/verbs/catkin_config.html">catkin-tools</a><a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h1>
+<p>Lots of useful info on setting up workspaces.</p>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="examples.html" class="btn btn-neutral float-right" title="Useful Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rviz.html" class="btn btn-neutral" title="RViz" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Huckleberry Febbo.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.1-rc1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

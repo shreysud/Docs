@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>obstacle_detector &mdash; PhD Notes 0.0.1-rc1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="PhD Notes 0.0.1-rc1 documentation" href="../../index.html"/>
+        <link rel="up" title="Useful ROS Packages" href="useful_packages.html"/>
+        <link rel="next" title="Eigen" href="other_packages.html"/>
+        <link rel="prev" title="RViz" href="rviz.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PhD Notes
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../software.html">Software</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">ROS</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ros.html">Installing ROS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="useful_resources.html">Resources and Tutorials</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="useful_packages.html">Useful ROS Packages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="tf.html">tf2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rviz.html">RViz</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">obstacle_detector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html">Eigen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id2">roscpp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id3">rospy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id4">Common Messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id5">message_filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id6">PCL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id7">Ackermann Group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id8">navigation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id9">hector_localization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id10">ros_control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id11">pointcloud_to_laserscan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id12">teleop_twist_keyboard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id13">Cartographer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id14">laser_pipeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id15">robot_localization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#robot-state-publisher">robot_state_publisher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id16">clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id17">ControllIt!</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id18">MoveIT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id20">URDF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other_packages.html#id21">catkin-tools</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="examples.html">Useful Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="my_ros.html">My Personal Build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="issues.html">Potential Errors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gazebo/index.html">Gazebo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ros_gazebo/index.html">ROS and Gazebo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chrono/index.html">Project Chrono</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polysync/index.html">Polysync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../julia/index.html">julia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/index.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../latex/index.html">LaTeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../C/index.html">C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../os/index.html">Operating Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/index.html">misc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/index.html">Huck&#8217;s notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PhD Notes</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../software.html">Software</a> &raquo;</li>
+        
+          <li><a href="index.html">ROS</a> &raquo;</li>
+        
+          <li><a href="useful_packages.html">Useful ROS Packages</a> &raquo;</li>
+        
+      <li>obstacle_detector</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/software/ros/obstacle_detector.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><a class="reference external" href="https://github.com/tysik/obstacle_detector">obstacle_detector</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>To use this package you must install <a class="reference external" href="http://arma.sourceforge.net/download.html">Armadillo C++</a>.</p>
+<div class="section" id="installing-armadillo-c">
+<h2>Installing Armadillo C++<a class="headerlink" href="#installing-armadillo-c" title="Permalink to this headline">¶</a></h2>
+<p>Put these programs in the <code class="docutils literal"><span class="pre">/opt</span></code> folder</p>
+<div class="section" id="first-you-need-openblas">
+<h3>First you need <a class="reference external" href="http://www.openblas.net/">OpenBlas</a><a class="headerlink" href="#first-you-need-openblas" title="Permalink to this headline">¶</a></h3>
+<p>To get it type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">xianyi</span><span class="o">/</span><span class="n">OpenBLAS</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>Then go into the <code class="docutils literal"><span class="pre">OpenBlas</span></code> folder and type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">make</span>
+</pre></div>
+</div>
+<p>Get devel files from Debian repos <a class="reference external" href="https://github.com/xianyi/OpenBLAS/wiki/Precompiled-installation-packages">as per</a>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+<span class="n">apt</span> <span class="n">search</span> <span class="n">openblas</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">libopenblas</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">sudo</span> <span class="n">update</span><span class="o">-</span><span class="n">alternatives</span> <span class="o">--</span><span class="n">config</span> <span class="n">libblas</span><span class="o">.</span><span class="n">so</span><span class="o">.</span><span class="mi">3</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">cmake</span> <span class="n">liblapack</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">apt</span> <span class="n">search</span> <span class="n">arpack</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">libarpack2</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="then-you-need-lapack">
+<h3>Then you need <a class="reference external" href="https://github.com/Reference-LAPACK/lapack-release/tree/lapack-3.1.0">LAPACK</a><a class="headerlink" href="#then-you-need-lapack" title="Permalink to this headline">¶</a></h3>
+<p>To get it type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Reference</span><span class="o">-</span><span class="n">LAPACK</span><span class="o">/</span><span class="n">lapack</span><span class="o">-</span><span class="n">release</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>Then go into the <code class="docutils literal"><span class="pre">lapack-release</span></code> folder and type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">mv</span> <span class="n">make</span><span class="o">.</span><span class="n">inc</span><span class="o">.</span><span class="n">example</span> <span class="n">make</span><span class="o">.</span><span class="n">inc</span>
+<span class="n">sudo</span> <span class="n">make</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Then you may run into this issue:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">liblapack</span><span class="o">.</span><span class="n">a</span> <span class="o">../../</span><span class="n">librefblas</span><span class="o">.</span><span class="n">a</span>
+<span class="n">make</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">Leaving</span> <span class="n">directory</span> <span class="s1">&#39;/opt/lapack-release/TESTING/LIN&#39;</span>
+<span class="n">Testing</span> <span class="n">COMPLEX16</span> <span class="n">LAPACK</span> <span class="n">linear</span> <span class="n">equation</span> <span class="n">routines</span>
+<span class="o">./</span><span class="n">LIN</span><span class="o">/</span><span class="n">xlintstz</span> <span class="o">&lt;</span> <span class="n">ztest</span><span class="o">.</span><span class="ow">in</span> <span class="o">&gt;</span> <span class="n">ztest</span><span class="o">.</span><span class="n">out</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span>
+<span class="n">SEP</span><span class="p">:</span> <span class="n">Testing</span> <span class="n">Symmetric</span> <span class="n">Eigenvalue</span> <span class="n">Problem</span> <span class="n">routines</span>
+<span class="o">./</span><span class="n">EIG</span><span class="o">/</span><span class="n">xeigtstz</span> <span class="o">&lt;</span> <span class="n">sep</span><span class="o">.</span><span class="ow">in</span> <span class="o">&gt;</span> <span class="n">zsep</span><span class="o">.</span><span class="n">out</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span>
+<span class="n">Makefile</span><span class="p">:</span><span class="mi">467</span><span class="p">:</span> <span class="n">recipe</span> <span class="k">for</span> <span class="n">target</span> <span class="s1">&#39;zsep.out&#39;</span> <span class="n">failed</span>
+<span class="n">make</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="o">***</span> <span class="p">[</span><span class="n">zsep</span><span class="o">.</span><span class="n">out</span><span class="p">]</span> <span class="n">Error</span> <span class="mi">139</span>
+<span class="n">make</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">Leaving</span> <span class="n">directory</span> <span class="s1">&#39;/opt/lapack-release/TESTING&#39;</span>
+<span class="n">Makefile</span><span class="p">:</span><span class="mi">42</span><span class="p">:</span> <span class="n">recipe</span> <span class="k">for</span> <span class="n">target</span> <span class="s1">&#39;lapack_testing&#39;</span> <span class="n">failed</span>
+<span class="n">make</span><span class="p">:</span> <span class="o">***</span> <span class="p">[</span><span class="n">lapack_testing</span><span class="p">]</span> <span class="n">Error</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>As per <a class="reference external" href="http://blog.csdn.net/chishuideyu/article/details/78351063">this site</a> the stack size can be increased with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ulimit</span> <span class="o">-</span><span class="n">s</span> <span class="mi">100000</span>
+</pre></div>
+</div>
+<p>Then run:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">make</span>
+</pre></div>
+</div>
+<p class="last">And it should compile fine!</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">can also install SuperLU and ARPACK etc. <a href="#id2"><span class="problematic" id="id3">`as per&lt;https://github.com/conradsnicta/armadillo-code/tree/8.300.x&gt;`_</span></a></p>
+</div>
+</div>
+<div class="section" id="now-we-can-get-armadillo-c">
+<h3>Now we can get Armadillo C++<a class="headerlink" href="#now-we-can-get-armadillo-c" title="Permalink to this headline">¶</a></h3>
+<p>To get it type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">conradsnicta</span><span class="o">/</span><span class="n">armadillo</span><span class="o">-</span><span class="n">code</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>Then go into the <code class="docutils literal"><span class="pre">armadillo-code</span></code> folder and type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">cmake</span> <span class="o">.</span>
+<span class="n">sudo</span> <span class="n">make</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="other_packages.html" class="btn btn-neutral float-right" title="Eigen" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="rviz.html" class="btn btn-neutral" title="RViz" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Huckleberry Febbo.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.1-rc1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
