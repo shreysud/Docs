@@ -5,7 +5,7 @@ Installation of `gazebo_ros_pkgs <http://gazebosim.org/tutorials?tut=ros_install
 From Pre-Built Debians:
 ------------------------
 
-For ROS kinetic
+For ROS Kinetic 
 ^^^^^^^^^^^^^^^^^
 ::
 

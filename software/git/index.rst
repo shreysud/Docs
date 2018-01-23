@@ -94,6 +94,17 @@ remove files that where previously cached that are now in ``.gitignore``:
   git add .
   git commit -am "Removed ignored files"
 
+Update your `branch from the original branch <https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches>`_:
+::
+
+  git fetch [name _of_remote]
+  git fetch https://github.com/CPFL/Autoware
+
+To automatically `fetch and merge from a remote <https://git-scm.com/book/id/v2/Git-Basics-Working-with-Remotes>`_:
+::
+
+  git pull upstream master
+
 Create a disconnected git branch
 ------------------------------------
 
