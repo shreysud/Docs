@@ -13,6 +13,7 @@ In the terminal run:
   * `Uninstall <https://pip.pypa.io/en/stable/reference/pip_uninstall/>`_
 
 
+
 Useful Resources
 ===================
 
@@ -133,7 +134,7 @@ Using Sphinx BibTex extension
 
    extensions = ['sphinxcontrib.bibtex']
 
-.. warning:: that it is *added* to the rest of extensions!! Not just at the top, or it will be removed!!! 
+.. warning:: that it is *added* to the rest of extensions!! Not just at the top, or it will be removed!!!
 
 Like this:
 
